@@ -23,11 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
+
 $config['base_url'] = 'http://lc.patientapp.com/';
-=======
-$config['base_url'] = '';
->>>>>>> e08b4f6911a9f2eac7197feadc40eabb74a1f981
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,11 +37,9 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-<<<<<<< HEAD
+
 $config['index_page'] = '';
-=======
-$config['index_page'] = 'index.php';
->>>>>>> e08b4f6911a9f2eac7197feadc40eabb74a1f981
+
 
 /*
 |--------------------------------------------------------------------------
