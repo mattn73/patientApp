@@ -11,6 +11,10 @@
 	<script defer src="<?php echo base_url("assets/js/solid.min.js"); ?>"></script>
     <script defer src="<?php echo base_url("assets/js/fontawesome.min.js"); ?>"></script>
 
+    <script src="<?php echo base_url("assets/js/Chart.bundle.min.js"); ?>"></script>
+   
+
+
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
