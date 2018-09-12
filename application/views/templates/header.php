@@ -26,49 +26,36 @@
             </div>
 
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+                <h3>kardia</h3>
             </div>
 
             <ul class="list-unstyled components">
-                <div class='side-header'>
-                <p>Dummy Heading</p>
 
-                </div>    
             
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
+                    <a href="#homeSubmenu"><i class="fas fa-home"></i> Home</a>
+                   
                 </li>
+               
                 <li>
-                    <a href="#">About</a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
+                    <a href="#"><i class="fas fa-chart-bar"></i> Report</a>
                 </li>
+               
                 <li>
-                    <a href="#">Portfolio</a>
+                    <a href="#"><i class="fas fa-bell"></i> Reminder</a>
                 </li>
+                
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#"><i class="fas fa-utensils"></i> Meal Plans</a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fas fa-cog"></i> Setting</a>
+                </li>
+
+                 <li>
+                    <a href="#"><i class="fas fa-question"></i> About</a>
+                                       
                 </li>
             </ul>
 
@@ -76,7 +63,7 @@
         </nav>
 
   <div id="content">
-                <button type="button" id="sidebarCollapse" class="btn ">
+                <button type="button" id="sidebarCollapse" class="btn">
                     <!-- <i class="fas fa-align-left"></i> -->
                     <div class="hamburger">
                         <span class="bar"></span>
