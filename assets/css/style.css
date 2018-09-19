@@ -452,6 +452,7 @@ background-image: url(../images/heart.jpg);
     margin-right: auto;
     margin-left: auto;
     align-content: center;
+<<<<<<< HEAD
 }
 
 #progress{
@@ -527,4 +528,6 @@ background-image: url(../images/heart.jpg);
     #login .cancelbtn {
        width: 100%;
     }
+=======
+>>>>>>> 22729ff956a6a6096ffbce56caefb47ba93ed8b5
 }
