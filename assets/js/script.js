@@ -17,7 +17,6 @@ function closeSidebar(){
     $('.overlay').removeClass('active');
  
 
-<<<<<<< HEAD
 }
 
 function updateProgress() {
@@ -73,6 +72,3 @@ function updateProgress() {
         e.preventDefault();
      });
 
-=======
-}
->>>>>>> 22729ff956a6a6096ffbce56caefb47ba93ed8b5
