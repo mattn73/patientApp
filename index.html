@@ -1,0 +1,281 @@
+<html lang="en">
+
+<head>
+
+    <title>APP</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.theme.min.css" />
+    <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.structure.min.css" />
+
+    <script defer src=" assets/js/solid.min.js"></script>
+    <script defer src=" assets/js/fontawesome.min.js"></script>
+
+    <script src=" assets/js/Chart.bundle.min.js"></script>
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3>kardia</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+
+
+                <li class="active">
+                    <a id="side-home" onclick="addActive('#side-home');" href="#home"><i class="fas fa-home"></i> Home</a>
+
+                </li>
+
+                <li>
+                    <a id="side-report" onclick="addActive('#side-report');" href="#report"><i class="fas fa-chart-bar"></i>
+                        Report</a>
+                </li>
+
+                <li>
+                    <a id="side-reminder" onclick="addActive('#side-reminder');" href="#"><i class="fas fa-bell"></i>
+                        Reminder</a>
+                </li>
+
+                <li>
+                    <a id="side-meal" onclick="addActive('#side-meal');" href="#"><i class="fas fa-utensils"></i> Meal
+                        Plans</a>
+                </li>
+
+                <li>
+                    <a id="side-setting" onclick="addActive('#side-setting');" href="#"><i class="fas fa-cog"></i>
+                        Setting</a>
+                </li>
+
+                <li>
+                    <a id="side-about" onclick="addActive('#side-about');" href="#"><i class="fas fa-question"></i>
+                        About</a>
+
+                </li>
+            </ul>
+
+
+        </nav>
+
+        <div class="overlay"></div>
+
+
+
+        <!-- Start of first page -->
+        <div data-role="page" id="home">
+
+            <div data-role="header">
+
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <!-- <i class="fas fa-align-left"></i> -->
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content">
+                <div class='bodyContainer'>
+                    <h2>Welcome to Home</h2>
+                    <div class="container">
+                        <div id="progress"></div>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <canvas id="myChart" width="400" height="400"></canvas>
+
+                    <div class="line"></div>
+
+                    <h2>Lorem Ipsum Dolor</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <div class="line"></div>
+
+                    <h2>Lorem Ipsum Dolor</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <div class="line"></div>
+
+                    <h3>Lorem Ipsum Dolor</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+
+                <script>
+                    var ctx = document.getElementById("myChart").getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ["Day 0", "Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6"],
+                            datasets: [{
+                                label: '# of Votes',
+                                data: [12, 19, 3, 5, 2, 3],
+                                backgroundColor: [
+                                    'rgb(50,165,55)',
+
+                                ],
+                                borderColor: [
+                                    'rgb(0,111,5)'
+
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                </script>
+            </div><!-- /content -->
+
+            <div data-role="footer">
+               </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- Start of second page -->
+        <div data-role="page" id="report">
+
+            <div data-role="header">
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <!-- <i class="fas fa-align-left"></i> -->
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+
+
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content">
+                <form id="login" >
+                    <div class="imgcontainer">
+                      <img src="assets/images/img_avatar2.png" alt="Avatar" class="avatar">
+                    </div>
+                  
+                    <div class="container">
+                      <label for="uname"><b>Username</b></label>
+                      <input type="text" placeholder="Enter Username" name="uname" required>
+                  
+                      <label for="psw"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+                          
+                      <button type="submit">Login</button>
+                      
+                    </div>
+                  
+                    <div class="container" style="background-color:#f1f1f1">
+                      <button type="button" class="cancelbtn">Cancel</button>
+                      <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                  </form>
+                  
+            </div><!-- /content -->
+
+            <div data-role="footer">
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.mobile.custom.min.js"></script>
+    <script type="text/javascript" src="assets/js/progressbar.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            updateProgress();
+
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('.sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+
+        $(document).ready(function () {
+            $(document).on("swipeleft swiperight", function (e) {
+
+                if (!($(".overlay").hasClass('active'))) {
+                    if (e.type === "swiperight") {
+                        $('#sidebar').addClass('active');
+                        $('.overlay').addClass('active');
+                        $('.collapse.in').toggleClass('in');
+                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+
+                    }
+                }
+            });
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>
