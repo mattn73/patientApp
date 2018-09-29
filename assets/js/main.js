@@ -1,17 +1,38 @@
+jQuery.fn.clearable = function () {
+
+    $('.morelink').on('click', function () {
+        var $this = $(this);
+        if ($this.hasClass('less')) {
+            $this.removeClass('less');
+            $this.html(config.moreText);
+        } else {
+            $this.addClass('less');
+            $this.html(config.lessText);
+        }
+        $this.parent().prev().toggle();
+        $this.prev().toggle();
+        return false;
+    });
+
+    return this.each(function () {
 
 
-$('.hamburger').click(function () {
-  $(this).toggleClass('responsive');
-});
+
+        $(this).css({ 'border-width': '0px', 'outline': 'none' })
+            .wrap('<div id="sq" class="divclearable"></div>')
+            .parent()
+            .attr('class', $(this).attr('class') + ' divclearable')
+            .append('<a class="clearlink" href="javascript:"></a>');
+
+        $('.clearlink')
+            .attr('title', 'Click to clear this textbox')
+            .click(function () {
+
+                $(this).prev().val('').focus();
+
+            });
+    });
+}
 
 
-
-$(document).ready(function () {
-  var link = document.createElement("link");
-  link.href = "assets/css/style.css";
-  link.type = "text/css";
-  link.rel = "stylesheet";
-  document.getElementsByTagName("head")[0].appendChild(link);
-
-});
 
