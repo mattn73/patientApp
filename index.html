@@ -3,11 +3,12 @@
 <head>
 
     <title>APP</title>
+    <!-- <link rel="stylesheet" href="assets/css/style.css"/> -->
     <link rel="stylesheet" href="assets/css/bootstrap.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" />
+     <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.theme.min.css" />
     <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.structure.min.css" />
+  
 
     <script defer src=" assets/js/solid.min.js"></script>
     <script defer src=" assets/js/fontawesome.min.js"></script>
@@ -24,7 +25,7 @@
 
 <body>
 
-    <div class="wrapper">
+    <div class="wrapper" id="body">
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div id="dismiss">
@@ -166,7 +167,7 @@
             </div><!-- /content -->
 
             <div data-role="footer">
-               </div><!-- /footer -->
+            </div><!-- /footer -->
         </div><!-- /page -->
 
         <!-- Start of second page -->
@@ -186,28 +187,78 @@
             </div><!-- /header -->
 
             <div role="main" class="ui-content">
-                <form id="login" >
+                <form id="login">
                     <div class="imgcontainer">
-                      <img src="assets/images/img_avatar2.png" alt="Avatar" class="avatar">
+                        <img src="assets/images/img_avatar2.png" alt="Avatar" class="avatar">
                     </div>
-                  
+
                     <div class="container">
-                      <label for="uname"><b>Username</b></label>
-                      <input type="text" placeholder="Enter Username" name="uname" required>
-                  
-                      <label for="psw"><b>Password</b></label>
-                      <input type="password" placeholder="Enter Password" name="psw" required>
-                          
-                      <button type="submit">Login</button>
-                      
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <button type="submit">Login</button>
+
                     </div>
-                  
+
                     <div class="container" style="background-color:#f1f1f1">
-                      <button type="button" class="cancelbtn">Cancel</button>
-                      <span class="psw">Forgot <a href="#">password?</a></span>
+                        <button type="button" class="cancelbtn">Cancel</button>
+                        <span class="psw">Forgot <a href="#">password?</a></span>
                     </div>
-                  </form>
-                  
+                </form>
+
+            </div><!-- /content -->
+
+            <div data-role="footer">
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="signup">
+
+            <div data-role="header">
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <!-- <i class="fas fa-align-left"></i> -->
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+
+
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content">
+                <form id="signup"  style="border:1px solid #ccc">
+                    <div class="container">
+                    <h1>Sign Up</h1>
+                    <p>Please fill in this form to create an account.</p>
+                    <hr>
+                
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+                
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                    
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                    </label>
+                    
+                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                
+                    <div class="clearfix">
+                        <button type="button" class="cancelbtn">Cancel</button>
+                        <button type="submit" class="signupbtn">Sign Up</button>
+                    </div>
+                    </div>
+                </form>
+
             </div><!-- /content -->
 
             <div data-role="footer">
@@ -231,20 +282,29 @@
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
     <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.mobile.custom.min.js"></script>
-<<<<<<< HEAD
     <script type="text/javascript" src="assets/js/progressbar.js"></script>
-=======
->>>>>>> 22729ff956a6a6096ffbce56caefb47ba93ed8b5
     <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/firebase.js"></script>
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script> -->
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDU7fpi6b6XoFgRZQQeGlj1IKoCtiv_oxU",
+            authDomain: "kardia-529a2.firebaseapp.com",
+            databaseURL: "https://kardia-529a2.firebaseio.com",
+            projectId: "kardia-529a2",
+            storageBucket: "kardia-529a2.appspot.com",
+            messagingSenderId: "816688482541"
+        };
+        firebase.initializeApp(config);
+    </script>
 
 
     <script type="text/javascript">
         $(document).ready(function () {
-<<<<<<< HEAD
             updateProgress();
 
-=======
->>>>>>> 22729ff956a6a6096ffbce56caefb47ba93ed8b5
             $("#sidebar").mCustomScrollbar({
                 theme: "minimal"
             });
@@ -281,6 +341,7 @@
 
 
     </script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
 
 </body>
 
