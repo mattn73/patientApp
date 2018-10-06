@@ -74,6 +74,64 @@ function clearSignup() {
     $('#signupPsw-repeat').clearable();
 }
 
+/***database Function and configuration */
+
+var config = {
+    apiKey: "AIzaSyDU7fpi6b6XoFgRZQQeGlj1IKoCtiv_oxU",
+    authDomain: "kardia-529a2.firebaseapp.com",
+    databaseURL: "https://kardia-529a2.firebaseio.com",
+    projectId: "kardia-529a2",
+    storageBucket: "kardia-529a2.appspot.com",
+    messagingSenderId: "816688482541"
+};
+firebase.initializeApp(config);
+
+
+var database = firebase.database();
+
+function writeUserData(userId, name, email, password) {
+
+    firebase.database().ref('users/' + userId).update({
+        username: name,
+        email: email,
+        password: password,
+        id: userId,
+
+    }, function (error) {
+        if (error) {
+            console.log('write FAil: ' + error);
+        } else {
+            console.log('write sucessful: ' + userId);
+            location.replace("/");
+        }
+    });
+
+}
+
+function UpdateUser(uid, username, picture, title, body) {
+    // A post entry.
+    var postData = {
+        author: username,
+        uid: uid,
+        body: body,
+        title: title,
+        starCount: 0,
+        authorPic: picture
+    };
+
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child('posts').push().key;
+
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    var updates = {};
+    updates['/posts/' + newPostKey] = postData;
+    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+    return firebase.database().ref().update(updates);
+}
+
+
+/** end of database  */
 
 
 
@@ -100,13 +158,32 @@ $("#signup").on('submit', function (e) {
     var password = $('#signup').find('input[name="psw"]').val();
     var rePassword = $('#signup').find('input[name="psw-repeat"]').val();
 
+console.log('in');
+    if (password == rePassword) {
 
-    console.log('username: ' + username);
-    console.log('password: ' + email);
-    console.log('password: ' + password);
-    console.log('password: ' + rePassword);
+        console.log('in 2');
 
-    location.replace("/");
+        var userTable = firebase.database().ref('users/');
+        var userId;
+
+       
+        userTable.limitToLast(1).once('child_added', function (childSnapshot) {
+            var snap = childSnapshot.val();
+            console.log(JSON.stringify(snap.id, null, 4));
+            var id = JSON.stringify(snap.id, null, 4);
+            userId = id;
+            if (isNaN(parseInt(userId))) {
+                userId = 0;
+            };
+            userId = parseInt(userId) + 1;
+            writeUserData(userId, username, email, password);
+
+        });
+       
+
+    }
+
+
 
     //stop form submission
     e.preventDefault();
