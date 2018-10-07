@@ -61,6 +61,14 @@
                 </li>
 
                 <li>
+                    <a id="side-signIn" onclick="addActive('#side-signIn');" href="#login"><i class="fas fa-user"></i>
+                        signIn</a>
+
+                    <a id="side-signOut" onclick="signOut();" href="#" style="display:none"><i class="fas fa-user"></i>
+                        signOut</a>
+                </li>
+
+                <li>
                     <a id="side-setting" onclick="addActive('#side-setting');" href="#"><i class="fas fa-cog"></i>
                         Setting</a>
                 </li>
@@ -172,7 +180,7 @@
         </div><!-- /page -->
 
         <!-- Start of second page -->
-        <div data-role="page" id="report">
+        <div data-role="page" id="login">
 
             <div data-role="header">
                 <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
@@ -188,27 +196,28 @@
             </div><!-- /header -->
 
             <div role="main" class="ui-content">
-                <form id="login">
+                <div id="login">
                     <div class="imgcontainer">
                         <img src="assets/images/img_avatar2.png" alt="Avatar" class="avatar">
                     </div>
 
                     <div class="container">
-                        <label for="uname"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
+                        <label for="uname"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
 
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
 
-                        <button type="submit">Login</button>
+                        <button id='loginButton' type="button">Login</button>
 
                     </div>
 
                     <div class="container" style="background-color:#f1f1f1">
                         <button type="button" class="cancelbtn">Cancel</button>
-                        <span class="psw">Forgot <a href="#">password?</a></span>
+                        <span class="psw">Forgot <a href="#">password?</a></span><br />
+                        <span class="psw">Create an account <a href="#signup">click here</a></span>
                     </div>
-                </form>
+                </div>
 
             </div><!-- /content -->
 
@@ -240,9 +249,6 @@
 
                         <label for="email"><b>Email</b></label>
                         <input type="text" placeholder="Enter Email" id="signEmail" name="email" required />
-
-                        <label for="uname"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" id='signupUname' name="uname" required />
 
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" id='signupPsw' name="psw" required />
@@ -293,6 +299,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
 
 
     <!-- <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script> -->
@@ -346,6 +353,11 @@
     </script>
 
     <script>
+
+
+
+
+
 
 
 

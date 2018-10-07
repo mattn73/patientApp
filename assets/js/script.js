@@ -108,65 +108,90 @@ function writeUserData(userId, name, email, password) {
 
 }
 
-function UpdateUser(uid, username, picture, title, body) {
-    // A post entry.
-    var postData = {
-        author: username,
-        uid: uid,
-        body: body,
-        title: title,
-        starCount: 0,
-        authorPic: picture
-    };
-
-    // Get a key for a new Post.
-    var newPostKey = firebase.database().ref().child('posts').push().key;
-
-    // Write the new post's data simultaneously in the posts list and the user's post list.
-    var updates = {};
-    updates['/posts/' + newPostKey] = postData;
-    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-
-    return firebase.database().ref().update(updates);
-}
 
 
 /** end of database  */
 
 
 
-$("#login").on('submit', function (e) {
+$("#loginButton").click(function (e) {
 
-    var username = $('#login').find('input[name="uname"]').val();
+    var email = $('#login').find('input[name="email"]').val();
     var password = $('#login').find('input[name="psw"]').val();
 
 
-    console.log('username: ' + username);
-    console.log('password: ' + password);
+    if (firebase.auth().currentUser) {
+        // [START signout]
+        firebase.auth().signOut();
+        window.localStorage.clear();
+        // [END signout]
+    } else {
 
-    location.replace("/");
+        if (email.length < 1) {
+            alert('Please enter an email address.');
+            return;
+        }
+        if (password.length < 1) {
+            alert('Please enter a password.');
+            return;
+        }
+        // Sign in with email and pass.
+        // [START authwithemail]
+        firebase.auth().signInWithEmailAndPassword(email, password).then( function () {
+           
+            $('#side-signIn').css("display", "none");
+
+    
+            $('#side-signOut').css("display", "block");
+            
+            window.localStorage.setItem('user', email);
+
+            location.replace("/");
+        
+        
+        
+        
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // [START_EXCLUDE]
+            if (errorCode === 'auth/wrong-password') {
+                alert('Wrong password.');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+            //document.getElementById('quickstart-sign-in').disabled = false;
+            // [END_EXCLUDE]
+        });
+        // [END authwithemail]
+    }
+  
+   
+   
 
     //stop form submission
     e.preventDefault();
 });
 
 
+
+
+
+
 $("#signup").on('submit', function (e) {
 
-    var username = $('#signup').find('input[name="uname"]').val();
+
     var email = $('#signup').find('input[name="email"]').val();
     var password = $('#signup').find('input[name="psw"]').val();
     var rePassword = $('#signup').find('input[name="psw-repeat"]').val();
 
-console.log('in');
     if (password == rePassword) {
-
-        console.log('in 2');
 
         var userTable = firebase.database().ref('users/');
         var userId;
 
-       
         userTable.limitToLast(1).once('child_added', function (childSnapshot) {
             var snap = childSnapshot.val();
             console.log(JSON.stringify(snap.id, null, 4));
@@ -177,17 +202,93 @@ console.log('in');
             };
             userId = parseInt(userId) + 1;
             writeUserData(userId, username, email, password);
+            loadUser(username, password);
 
         });
-       
+
+
+        if (email.length < 4) {
+            alert('Please enter an email address.');
+            return;
+        }
+        if (password.length < 4) {
+            alert('Please enter a password.');
+            return;
+        }
+
+        // [START createwithemail]
+        firebase.auth().createUserWithEmailAndPassword(email, password).then( function () {
+           
+            window.localStorage.setItem('user', email);
+            location.replace("/");
+        
+        
+        
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // [START_EXCLUDE]
+            if (errorCode == 'auth/weak-password') {
+                alert('The password is too weak.');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+            // [END_EXCLUDE]
+        });
 
     }
 
 
-
-    //stop form submission
-    e.preventDefault();
+    e.preventDefault(); //stop form submission
 });
 
+
+
+function signOut() {
+
+    var r = confirm("Confirm Signout");
+    if (r == true) {
+
+        firebase.auth().signOut().then( function () {
+
+            window.localStorage.clear();
+   
+            $('#side-signOut').css("display", "none");
+            $('#side-signIn').css("display", "block");
+
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+           
+            alert(errorMessage);
+       
+            console.log(error);
+            //document.getElementById('quickstart-sign-in').disabled = false;
+            // [END_EXCLUDE]
+        });
+
+
+    }
+
+}
+
+
+$(document).ready(function () {
+
+   var user = window.localStorage.getItem('user');
+
+   if(user != null){
+
+    $('#side-signIn').css("display", "none");
+    $('#side-signOut').css("display", "block");
+
+   }
+
+
+
+});
 
 
