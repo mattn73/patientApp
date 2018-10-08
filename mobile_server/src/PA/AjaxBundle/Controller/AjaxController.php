@@ -8,9 +8,22 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
+use PA\AjaxBundle\Entity\User;
 
 class AjaxController extends Controller
 {
+
+    Private $em;
+    
+    
+    public function __construct()
+    {
+        $this->em = getDoctrine()->getManager();
+     
+    }
+   
+
+    
     public function indexAction()
     {
         return $this->render('PAAjaxBundle:Default:index.html.twig');
@@ -24,23 +37,35 @@ class AjaxController extends Controller
      */
     public function registerAction(Request $request)
     {
-        $username = $request->get('uname');
-        $email = $request->get('email');
-        $password = $request->get('psw');
-        $age = $request->get('age');
-        $sex = $request->get('sex');
-        $em = $this->getDoctrine()->getManager();
+
+        $param = [];
+        $param['uname'] = $request->get('uname');
+        $param['email'] = $request->get('email');
+        $param['psw'] = $request->get('psw');
+        $param['age'] = $request->get('age');
+        $param['sex'] = $request->get('sex');
 
 
-        $country = $em->getRepository(Country::class)->findOneBy(['countryCode' => $countryCode]);
+
+      
+        $user = new User;
+
+        $user->setUsername( $param['uname']);
+        $user->setEmail($param['email']);
+        $user->setPassword($param['psw']);
+        $user->setSex($param['sex']);
+        $user->setAge($param['age']);
+
+    
+        $em->persist($user);
+        $em->flush();
+
 
         /** @var RegionRepository $repo */
         $repo = $em->getRepository(Region::class);
         $regionList = $repo->getRegionByCountryId($country->getId());
 
-        return $this->render('AppBundle:Ajax:get_region.html.twig', [
-            'regionList' => $regionList,
-        ]);
+        return new response('Successfull');
     }
 }
 

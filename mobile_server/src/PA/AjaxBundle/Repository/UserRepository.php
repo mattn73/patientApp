@@ -10,4 +10,7 @@ namespace PA\AjaxBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
+
 }
