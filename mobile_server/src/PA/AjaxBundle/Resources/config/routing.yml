@@ -1,0 +1,3 @@
+pa_ajax_homepage:
+    path:     /
+    defaults: { _controller: PAAjaxBundle:Default:index }

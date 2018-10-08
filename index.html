@@ -1,0 +1,371 @@
+<html lang="en">
+
+<head>
+
+    <title>APP</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.theme.min.css" />
+    <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.structure.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+
+    <script defer src=" assets/js/solid.min.js"></script>
+    <script defer src=" assets/js/fontawesome.min.js"></script>
+
+    <script src=" assets/js/Chart.bundle.min.js"></script>
+
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+
+<body>
+
+    <div class="wrapper" id="body">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <h3>kardia</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+
+
+                <li class="active">
+                    <a id="side-home" onclick="addActive('#side-home');" href="#home"><i class="fas fa-home"></i> Home</a>
+
+                </li>
+
+                <li>
+                    <a id="side-report" onclick="addActive('#side-report');" href="#report"><i class="fas fa-chart-bar"></i>
+                        Report</a>
+                </li>
+
+                <li>
+                    <a id="side-reminder" onclick="addActive('#side-reminder');" href="#"><i class="fas fa-bell"></i>
+                        Reminder</a>
+                </li>
+
+                <li>
+                    <a id="side-meal" onclick="addActive('#side-meal');" href="#"><i class="fas fa-utensils"></i> Meal
+                        Plans</a>
+                </li>
+
+                <li>
+                    <a id="side-signIn" onclick="addActive('#side-signIn');" href="#login"><i class="fas fa-user"></i>
+                        signIn</a>
+
+                    <a id="side-signOut" onclick="signOut();" href="#" style="display:none"><i class="fas fa-user"></i>
+                        signOut</a>
+                </li>
+
+                <li>
+                    <a id="side-setting" onclick="addActive('#side-setting');" href="#"><i class="fas fa-cog"></i>
+                        Setting</a>
+                </li>
+
+                <li>
+                    <a id="side-about" onclick="addActive('#side-about');" href="#"><i class="fas fa-question"></i>
+                        About</a>
+
+                </li>
+            </ul>
+
+
+        </nav>
+
+        <div class="overlay"></div>
+
+
+
+        <!-- Start of first page -->
+        <div data-role="page" id="home">
+
+            <div data-role="header">
+
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <!-- <i class="fas fa-align-left"></i> -->
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content">
+                <div class='bodyContainer'>
+                    <h2>Welcome to Home</h2>
+                    <div class="container">
+                        <div id="progress"></div>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <canvas id="myChart" width="400" height="400"></canvas>
+
+                    <div class="line"></div>
+
+                    <h2>Lorem Ipsum Dolor</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <div class="line"></div>
+
+                    <h2>Lorem Ipsum Dolor</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <div class="line"></div>
+
+                    <h3>Lorem Ipsum Dolor</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+
+                <script>
+                    var ctx = document.getElementById("myChart").getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ["Day 0", "Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6"],
+                            datasets: [{
+                                label: '# of Votes',
+                                data: [12, 19, 3, 5, 2, 3],
+                                backgroundColor: [
+                                    'rgb(50,165,55)',
+
+                                ],
+                                borderColor: [
+                                    'rgb(0,111,5)'
+
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                </script>
+            </div><!-- /content -->
+
+            <div data-role="footer">
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <!-- Start of second page -->
+        <div data-role="page" id="login">
+
+            <div data-role="header">
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <!-- <i class="fas fa-align-left"></i> -->
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+
+
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content">
+                <div id="login">
+                    <div class="imgcontainer">
+                        <img src="assets/images/img_avatar2.png" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <label for="uname"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <button id='loginButton' type="button">Login</button>
+
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" class="cancelbtn">Cancel</button>
+                        <span class="psw">Forgot <a href="#">password?</a></span><br />
+                        <span class="psw">Create an account <a href="#signup">click here</a></span>
+                    </div>
+                </div>
+
+            </div><!-- /content -->
+
+            <div data-role="footer">
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="signup">
+
+            <div data-role="header">
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <!-- <i class="fas fa-align-left"></i> -->
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+
+
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content">
+                <form id="signup" style="border:1px solid #ccc">
+                    <div class="container">
+                        <h1>Sign Up</h1>
+                        <p>Please fill in this form to create an account.</p>
+                        <hr>
+
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" id="signEmail" name="email" required />
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" id='signupPsw' name="psw" required />
+
+                        <label for="psw-repeat"><b>Repeat Password</b></label>
+                        <input type="password" placeholder="Repeat Password" id='signupPsw-repeat' name="psw-repeat"
+                            required />
+
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
+                            Remember me
+                        </label>
+
+                        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+                        <div class="clearfix">
+                            <button type="button" onclick="clearSignup()" class="cancelbtn">Cancel</button>
+                            <button type="submit" class="signupbtn">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div><!-- /content -->
+
+            <div data-role="footer">
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.mobile.custom.min.js"></script>
+    <script type="text/javascript" src="assets/js/progressbar.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
+
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script> -->
+    <script>
+        // Initialize Firebase
+
+    </script>
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            updateProgress();
+
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('.sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+
+        $(document).ready(function () {
+            $(document).on("swipeleft swiperight", function (e) {
+
+                if (!($(".overlay").hasClass('active'))) {
+                    if (e.type === "swiperight") {
+                        $('#sidebar').addClass('active');
+                        $('.overlay').addClass('active');
+                        $('.collapse.in').toggleClass('in');
+                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+
+                    }
+                }
+            });
+        });
+
+
+
+
+    </script>
+
+    <script>
+
+
+
+
+
+
+
+
+
+    </script>
+
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+
+</html>
