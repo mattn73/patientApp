@@ -1,3 +1,7 @@
 pa_ajax_homepage:
     path:     /
-    defaults: { _controller: PAAjaxBundle:Default:index }
+    defaults: { _controller: PAAjaxBundle:Ajax:index }
+
+pa_ajax_register:
+    path:     /register
+    defaults: { _controller: PAAjaxBundle:Ajax:register }
