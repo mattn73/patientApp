@@ -13,15 +13,7 @@ use PA\AjaxBundle\Entity\User;
 class AjaxController extends Controller
 {
 
-    Private $em;
-    
-    
-    public function __construct()
-    {
-        $this->em = getDoctrine()->getManager();
-     
-    }
-   
+
 
     
     public function indexAction()
@@ -38,25 +30,26 @@ class AjaxController extends Controller
     public function registerAction(Request $request)
     {
 
-        $param = [];
-        $param['uname'] = $request->get('uname');
-        $param['email'] = $request->get('email');
-        $param['psw'] = $request->get('psw');
-        $param['age'] = $request->get('age');
-        $param['sex'] = $request->get('sex');
+        $postData = $request->request->all();
+    
 
+        if(!isset($postData['params'])){
 
+            return new response('Param Empty');
+        }
 
-      
-        $user = new User;
-
-        $user->setUsername( $param['uname']);
-        $user->setEmail($param['email']);
-        $user->setPassword($param['psw']);
-        $user->setSex($param['sex']);
-        $user->setAge($param['age']);
+        $inputparam = $postData['params'];
 
     
+        $user = new User;
+
+        $user->setUsername( $inputparam['uname']);
+        $user->setEmail($inputparam['email']);
+        $user->setPassword($inputparam['psw']);
+        $user->setSex($inputparam['sex']);
+        $user->setAge($inputparam['age']);
+
+        $em = getDoctrine()->getManager();
         $em->persist($user);
         $em->flush();
 

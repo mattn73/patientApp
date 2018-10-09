@@ -137,20 +137,20 @@ $("#loginButton").click(function (e) {
         }
         // Sign in with email and pass.
         // [START authwithemail]
-        firebase.auth().signInWithEmailAndPassword(email, password).then( function () {
-           
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
+
             $('#side-signIn').css("display", "none");
 
-    
+
             $('#side-signOut').css("display", "block");
-            
+
             window.localStorage.setItem('user', email);
 
             location.replace("/");
-        
-        
-        
-        
+
+
+
+
         }).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
@@ -167,9 +167,9 @@ $("#loginButton").click(function (e) {
         });
         // [END authwithemail]
     }
-  
-   
-   
+
+
+
 
     //stop form submission
     e.preventDefault();
@@ -186,24 +186,49 @@ $("#signup").on('submit', function (e) {
     var email = $('#signup').find('input[name="email"]').val();
     var password = $('#signup').find('input[name="psw"]').val();
     var rePassword = $('#signup').find('input[name="psw-repeat"]').val();
+    var uname = $('#signup').find('input[name="uname"]').val();
+    var age = $('#signup').find('input[name="age"]').val();
+    var sex = $('#signup').find('input[name="sex"]').val();
+
+
+    var params = [];
+
+    params['email'] = email;
+    params['uname'] = uname;
+    params['age'] = age;
+    params['sex'] = sex;
+    params['psw'] = password;
+
 
     if (password == rePassword) {
 
-        var userTable = firebase.database().ref('users/');
-        var userId;
+        // var userTable = firebase.database().ref('users/');
+        // var userId;
 
-        userTable.limitToLast(1).once('child_added', function (childSnapshot) {
-            var snap = childSnapshot.val();
-            console.log(JSON.stringify(snap.id, null, 4));
-            var id = JSON.stringify(snap.id, null, 4);
-            userId = id;
-            if (isNaN(parseInt(userId))) {
-                userId = 0;
-            };
-            userId = parseInt(userId) + 1;
-            writeUserData(userId, username, email, password);
-            loadUser(username, password);
+        // userTable.limitToLast(1).once('child_added', function (childSnapshot) {
+        //     var snap = childSnapshot.val();
+        //     console.log(JSON.stringify(snap.id, null, 4));
+        //     var id = JSON.stringify(snap.id, null, 4);
+        //     userId = id;
+        //     if (isNaN(parseInt(userId))) {
+        //         userId = 0;
+        //     };
+        //     userId = parseInt(userId) + 1;
+        //     writeUserData(userId, uname, email, password);
+        //     loadUser(username, password);
 
+        // });
+
+
+        var xVal = params;
+        jQuery.post('https://lc.patientapp.com/mobile_server/web/register', {params: xVal}, function (data) {
+            // alert(data);
+        }).success( function(data){
+            alert('Vos changements sont en attente de modération.');
+           
+        }).error(function (err) {
+            console.log(err);
+            alert('error');
         });
 
 
@@ -217,13 +242,13 @@ $("#signup").on('submit', function (e) {
         }
 
         // [START createwithemail]
-        firebase.auth().createUserWithEmailAndPassword(email, password).then( function () {
-           
+        firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
+
             window.localStorage.setItem('user', email);
             location.replace("/");
-        
-        
-        
+
+
+
         }).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
@@ -251,26 +276,30 @@ function signOut() {
     var r = confirm("Confirm Signout");
     if (r == true) {
 
-        firebase.auth().signOut().then( function () {
+        var user = window.localStorage.getItem('user');
 
-            window.localStorage.clear();
-   
-            $('#side-signOut').css("display", "none");
-            $('#side-signIn').css("display", "block");
+        if (user != null) {
 
-        }).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-           
-            alert(errorMessage);
-       
-            console.log(error);
-            //document.getElementById('quickstart-sign-in').disabled = false;
-            // [END_EXCLUDE]
-        });
+            firebase.auth().signOut().then(function () {
 
+                window.localStorage.clear();
 
+                $('#side-signOut').css("display", "none");
+                $('#side-signIn').css("display", "block");
+
+            }).catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+
+                alert(errorMessage);
+
+                console.log(error);
+                //document.getElementById('quickstart-sign-in').disabled = false;
+                // [END_EXCLUDE]
+            });
+
+        }
     }
 
 }
@@ -278,14 +307,14 @@ function signOut() {
 
 $(document).ready(function () {
 
-   var user = window.localStorage.getItem('user');
+    var user = window.localStorage.getItem('user');
 
-   if(user != null){
+    if (user != null) {
 
-    $('#side-signIn').css("display", "none");
-    $('#side-signOut').css("display", "block");
+        $('#side-signIn').css("display", "none");
+        $('#side-signOut').css("display", "block");
 
-   }
+    }
 
 
 
