@@ -1,8 +1,8 @@
 /*
     DEMO STYLE
 */
-
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -51,22 +51,22 @@ a:focus {
 ----------------------------------------------------- */
 
 #sidebar {
-    width: 275px;
+    width: 265px;
+    background-image: linear-gradient(156deg, #19769f 0%, #35d8a6 100%);
+    opacity: 0.93;
     position: fixed;
     top: 0;
     left: -331px;
     height: 100vh;
     z-index: 999;
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     transition: all 0.3s;
     overflow-y: scroll;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
-
-#sidebar h3{
-    padding-top: 60%;
+#sidebar h3 {
+    padding-top: 13%;
     color: #ffff;
     text-align: center;
 }
@@ -104,6 +104,7 @@ a:focus {
     opacity: 0;
     transition: all 0.5s ease-in-out;
 }
+
 .overlay.active {
     display: block;
     opacity: 1;
@@ -111,21 +112,34 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background-image: url(../images/heart.jpg);
     min-height: 200px;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
     margin-bottom: 3%;
 }
 
 #sidebar ul.components li {
-    margin-bottom: 4%;
+    /*margin-bottom: 4%;*/
 
 }
-#sidebar ul.components li a {
-    color: #2f3435
 
+#sidebar ul.components li a {
+    color: #ffffff;
+    font-family: "Gotham Rounded";
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+    text-transform: uppercase;
+    height: 59px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+
+}
+
+#sidebar img, .logoImg {
+
+    width: 75%;
+    margin-left: 12%;
+    margin-right: 10%;
+    margin-top: 16%;
 }
 
 #sidebar ul p {
@@ -137,6 +151,9 @@ a:focus {
     padding: 10px;
     font-size: 1.1em;
     display: block;
+    width: 100%;
+    border: 1px solid #ffffff;
+    opacity: 0.62;
 }
 
 #sidebar ul li a:hover {
@@ -144,7 +161,7 @@ a:focus {
     background: #8487947d;
 }
 
-#sidebar ul li.active>a,
+#sidebar ul li.active > a,
 a[aria-expanded="true"] {
     color: #353030;
     background: #8487947d;
@@ -206,84 +223,77 @@ a.article:hover {
     right: 0;
 }
 
-
-:root{
+:root {
     --main: #2f3435;
     --bg: rgb(255, 255, 255);
     --accent: salmon;
-  }
-  
-  *, *::before, *::after{
+}
+
+*, *::before, *::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'montserrat', sans serif;
-  }
-  
-  body{
+}
+
+body {
     background: var(--bg);
     color: var(--main);
-  }
-  
+}
 
-  
-  .row {
-   display: flex;
+.row {
+    display: flex;
     width: 80%;
     margin: 0 auto;;
-  }
-  
-  .hamburger{
+}
+
+.hamburger {
     display: block;
     cursor: pointer;
     width: 80px;
     margin-top: -5px;
     margin-left: -28px;
     background-color: #fff;
-  }
-  .bar{
+}
+
+.bar {
     display: block;
     width: 25px;
     height: 2px;
     background: var(--main);
     margin: 7px auto;
     transition: 0.2s ease-in;
-  }
-  
-.side-header{
+}
 
+.side-header {
 
-background-image: url(../images/heart.jpg);
+    background-image: url(../images/heart.jpg);
 
 }
-  
 
-#sidebarCollapse{
-    box-shadow: 0px 0px 0px rgba(0,0,0,0);
+#sidebarCollapse {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     border: 0px;
     background-color: transparent !important;
 }
 
-.list-unstyled svg{
+.list-unstyled svg {
 
     margin-right: 4%;
     margin-left: 4%;
-    color: #32a537;
-
+    color: #fff;
 
 }
 
-.list-unstyled li:hover{
+.list-unstyled li:hover {
 
     color: #353030;
     background: #8487947d;
 
-
 }
 
-
 /*Progress Bar */
-.progress{
+.progress {
     width: 150px;
     height: 150px;
     line-height: 150px;
@@ -292,7 +302,8 @@ background-image: url(../images/heart.jpg);
     box-shadow: none;
     position: relative;
 }
-.progress:after{
+
+.progress:after {
     content: "";
     width: 100%;
     height: 100%;
@@ -302,7 +313,8 @@ background-image: url(../images/heart.jpg);
     top: 0;
     left: 0;
 }
-.progress > span{
+
+.progress > span {
     width: 50%;
     height: 100%;
     overflow: hidden;
@@ -310,10 +322,12 @@ background-image: url(../images/heart.jpg);
     top: 0;
     z-index: 1;
 }
-.progress .progress-left{
+
+.progress .progress-left {
     left: 0;
 }
-.progress .progress-bar{
+
+.progress .progress-bar {
     width: 100%;
     height: 100%;
     background: none;
@@ -322,7 +336,8 @@ background-image: url(../images/heart.jpg);
     position: absolute;
     top: 0;
 }
-.progress .progress-left .progress-bar{
+
+.progress .progress-left .progress-bar {
     left: 100%;
     border-top-right-radius: 80px;
     border-bottom-right-radius: 80px;
@@ -330,10 +345,12 @@ background-image: url(../images/heart.jpg);
     -webkit-transform-origin: center left;
     transform-origin: center left;
 }
-.progress .progress-right{
+
+.progress .progress-right {
     right: 0;
 }
-.progress .progress-right .progress-bar{
+
+.progress .progress-right .progress-bar {
     left: -100%;
     border-top-left-radius: 80px;
     border-bottom-left-radius: 80px;
@@ -342,7 +359,8 @@ background-image: url(../images/heart.jpg);
     transform-origin: center right;
     animation: loading-1 1.8s linear forwards;
 }
-.progress .progress-value{
+
+.progress .progress-value {
     width: 90%;
     height: 90%;
     border-radius: 50%;
@@ -355,150 +373,210 @@ background-image: url(../images/heart.jpg);
     top: 5%;
     left: 5%;
 }
-.progress.blue .progress-bar{
+
+.progress.blue .progress-bar {
     border-color: #049dff;
 }
-.progress.blue .progress-left .progress-bar{
+
+.progress.blue .progress-left .progress-bar {
     animation: loading-2 1.5s linear forwards 1.8s;
 }
-.progress.yellow .progress-bar{
+
+.progress.yellow .progress-bar {
     border-color: #fdba04;
 }
-.progress.yellow .progress-left .progress-bar{
+
+.progress.yellow .progress-left .progress-bar {
     animation: loading-3 1s linear forwards 1.8s;
 }
-.progress.pink .progress-bar{
+
+.progress.pink .progress-bar {
     border-color: #ed687c;
 }
-.progress.pink .progress-left .progress-bar{
+
+.progress.pink .progress-left .progress-bar {
     animation: loading-4 0.4s linear forwards 1.8s;
 }
-.progress.green .progress-bar{
+
+.progress.green .progress-bar {
     border-color: #32a537;
 }
-.progress.green .progress-left .progress-bar{
+
+.progress.green .progress-left .progress-bar {
     animation: loading-5 1.2s linear forwards 1.8s;
 }
-@keyframes loading-1{
-    0%{
+
+@keyframes loading-1 {
+    0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
     }
 }
-@keyframes loading-2{
-    0%{
+
+@keyframes loading-2 {
+    0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         -webkit-transform: rotate(144deg);
         transform: rotate(144deg);
     }
 }
-@keyframes loading-3{
-    0%{
+
+@keyframes loading-3 {
+    0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         -webkit-transform: rotate(90deg);
         transform: rotate(90deg);
     }
 }
-@keyframes loading-4{
-    0%{
+
+@keyframes loading-4 {
+    0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         -webkit-transform: rotate(36deg);
         transform: rotate(36deg);
     }
 }
-@keyframes loading-5{
-    0%{
+
+@keyframes loading-5 {
+    0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
-    100%{
+    100% {
         -webkit-transform: rotate(126deg);
         transform: rotate(126deg);
     }
 }
-@media only screen and (max-width: 990px){
-    .progress{ margin-bottom: 20px; }
+
+@media only screen and (max-width: 990px) {
+    .progress {
+        margin-bottom: 20px;
+    }
 }
 
-
-.bodyContainer h2{
+.bodyContainer h2 {
 
     text-align: center;
 
 }
+
 .bodyContainer {
 
     width: 100%;
 }
 
-.progressBar{
+.progressBar {
 
     margin-right: auto;
     margin-left: auto;
     align-content: center;
 }
 
-#progress{
+#progress {
 
     margin: 18px auto;
     width: 200px;
     height: 200px;
     position: relative;
-  
+
 }
 
-.progressbar-text{
+.progressbar-text {
 
     color: #fff !important;
 }
 
+.forget-psw {
 
-
-input[type=text],input[type=password] {
-    width: 100% !important;
-    padding: 12px 20px !important;
-    display: inline-block !important;
-    border: 1px solid #ccc !important;
-    box-sizing: border-box !important;
+    width: 112px;
+    height: 14px;
+    color: #95989a;
+    font-family: "Gotham Rounded";
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 46%;
 }
 
+.createAcc {
 
-#body button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
+    width: 272px;
+    height: 16px;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 0.9em;
+    font-weight: 500;
+    /* Text style for "Don't Have" */
+    color: #95989a;
+}
+
+input[type=text], input[type=password] {
     width: 100%;
+    height: 41px;
+    border-radius: 4px;
+    border: 1px solid #d5d5d5;
+    background-color: #ffffff;
+
 }
 
-#body button:hover {
+.loginInput div {
+
+    margin-bottom: 7%;
+
+}
+
+#loginForm {
+
+    margin: 23% 0 0 0;
+}
+
+
+
+#loginForm button,#signupForm button {
+    width: 100%;
+    height: 49px;
+    box-shadow: 0 9px 10px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+    background: linear-gradient(91deg, #19769f 0%, #35d8a6 100%);
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+    font-family: "Gotham Rounded";
+}
+
+#loginForm button:hover {
     opacity: 0.8;
 }
 
-#body .cancelbtn {
+#loginForm .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: #f44336;
+    background: #ff4141;
+    margin: 1% 0 7% 0;
+    color: #ffffff;
+
 }
 
-#body .imgcontainer {
+#loginForm .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
+}
+
+#loginForm .widget {
+    padding: 19px;
+    padding-top: 18px;
 }
 
 img.avatar {
@@ -518,13 +596,243 @@ img.avatar {
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
-       display: block;
-       float: none;
+        display: block;
+        float: none;
     }
-    #body .cancelbtn,  #body .signupbtn {
-       width: 100%;
+
+    #body .cancelbtn, #body .signupbtn {
+        width: 100%;
     }
 }
+
+.item1 {
+    grid-area: age;
+}
+
+.item2 {
+    grid-area: blood;
+}
+
+.item3 {
+    grid-area: gender;
+}
+
+.item4 {
+    grid-area: height;
+}
+
+.item5 {
+    grid-area: weight;
+}
+
+.item6 {
+    grid-area: goal;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'age blood gender' 'height weight goal';
+    background-color: #ffff;
+    padding: 10px;
+    margin-top: 10%;
+}
+
+.grid-container > div {
+    background-color: #ffff;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1.2em;
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    height: 100px;
+    text-transform: capitalize;
+
+}
+
+.item1, .item2, .item4, .item5 {
+
+    border-right: 1px solid #d5d5d5;
+}
+
+.profileBck {
+
+    width: 100%;
+    height: 536px;
+    box-shadow: 0 -6px 6px rgba(0, 0, 0, 0.11);
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+#profile{
+
+    background-image: linear-gradient(150deg, #19769f 0%, #35d8a6 100%);
+}
+
+#profile .hamburger, #select .hamburger {
+    display: block;
+    cursor: pointer;
+    width: 80px;
+    margin-top: -5px;
+    margin-left: -28px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.title {
+
+    margin: 2% auto 2% auto;
+    width: 45%;
+    width: 102px;
+    height: 28px;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+}
+
+
+.formTitle   {
+
+    width: 45%;
+    height: 28px;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 35px;
+    font-weight: 500;
+    margin-left: 5%;
+}
+
+.profileImg {
+
+    margin-top: 0;
+    margin-bottom: -20%;
+}
+
+.grid-container span {
+
+    display: block;
+    height: 17px;
+    color: #95989a;
+    font-family: "Gotham Rounded";
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 13%;
+
+}
+
+.profileYear {
+
+    margin-top: 0 !important;
+}
+
+.profileKg {
+
+    margin-top: 0 !important;;
+}
+
+#select h2 {
+
+    width: 155px;
+    height: 28px;
+    color: #ffffff;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    top: 25%;
+
+
+}
+
+#select .title {
+
+    top: 9%;
+    padding: 0;
+    height: 50px;
+    margin-bottom: 0;
+    line-height: 50px;
+    position: relative;
+}
+
+.box {
+
+    background-color: #ffffff;
+    height: 680px;
+    padding-top: 21%;
+}
+
+#select .ui-content{
+    padding:0;
+}
+
+.box .title{
+
+    width: 100%;
+    height: 28px;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 7%;
+
+}
+
+.box button{
+
+    width: 158px;
+    height: 75px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    background-color: #19769f !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+    text-shadow: 0 0px 0 #f3f3f300 !important;
+    display: inline;
+    font-size: 1.4em;
+    position: relative;
+    top: 77px;
+    left: 1%;
+}
+
+
+#btn-h-yes{
+
+
+
+}
+
+#btn-h-no{
+
+    /*background-color: #FF0000 !important;*/
+
+}
+
+#select{
+
+    background-image: linear-gradient(101deg, #19769f 0%, #35d8a6 100%);
+}
+
+
+#select .createAcc{
+
+    position: relative;
+    top: 18%;
+    font-size: 1.1em;
+}
+
+.imgcontainer .title{
+
+    font-size: 41px;
+    width: 88%;
+    text-align:center;
+}
+
+
+
+
+
+
+
 
 
 

@@ -4,7 +4,7 @@
 
     <title>APP</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.theme.min.css" />
     <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.structure.min.css" />
@@ -15,7 +15,6 @@
     <script defer src=" assets/js/fontawesome.min.js"></script>
 
     <script src=" assets/js/Chart.bundle.min.js"></script>
-
 
 
     <meta charset="utf-8">
@@ -34,6 +33,7 @@
             </div>
 
             <div class="sidebar-header">
+                <img class="logoImg" src="assets/images/logo.png">
                 <h3>kardia</h3>
             </div>
 
@@ -41,40 +41,48 @@
 
 
                 <li class="active">
-                    <a id="side-home" onclick="addActive('#side-home');" href="#home"><i class="fas fa-home"></i> Home</a>
+                    <a id="side-home" onclick="addActive('#side-home');" href="#home">
+                        <i class="fas fa-home"></i> Home</a>
 
                 </li>
 
                 <li>
-                    <a id="side-report" onclick="addActive('#side-report');" href="#report"><i class="fas fa-chart-bar"></i>
+                    <a id="side-report" onclick="addActive('#side-report');" href="#report">
+                        <i class="fas fa-chart-bar"></i>
                         Report</a>
                 </li>
 
                 <li>
-                    <a id="side-reminder" onclick="addActive('#side-reminder');" href="#"><i class="fas fa-bell"></i>
+                    <a id="side-reminder" onclick="addActive('#side-reminder');" href="#">
+                        <i class="fas fa-bell"></i>
                         Reminder</a>
                 </li>
 
                 <li>
-                    <a id="side-meal" onclick="addActive('#side-meal');" href="#"><i class="fas fa-utensils"></i> Meal
-                        Plans</a>
+                    <a id="side-meal" onclick="addActive('#side-meal');" href="#">
+                        <i class="fas fa-utensils"></i> Meal Plans
+                    </a>
                 </li>
 
                 <li>
-                    <a id="side-signIn" onclick="addActive('#side-signIn');" href="#login"><i class="fas fa-user"></i>
+                    <a id="side-signIn" onclick="addActive('#side-signIn');" href="#login">
+                        <i class="fas fa-user"></i>
                         signIn</a>
 
-                    <a id="side-signOut" onclick="signOut();" href="#" style="display:none"><i class="fas fa-user"></i>
+                    <a id="side-signOut" onclick="signOut();" href="#" style="display:none">
+                        <i class="fas fa-user"></i>
                         signOut</a>
                 </li>
 
                 <li>
-                    <a id="side-setting" onclick="addActive('#side-setting');" href="#"><i class="fas fa-cog"></i>
+                    <a id="side-setting" onclick="addActive('#side-setting');" href="#">
+                        <i class="fas fa-cog"></i>
                         Setting</a>
                 </li>
 
                 <li>
-                    <a id="side-about" onclick="addActive('#side-about');" href="#"><i class="fas fa-question"></i>
+                    <a id="side-about" onclick="addActive('#side-about');" href="#">
+                        <i class="fas fa-question"></i>
                         About</a>
 
                 </li>
@@ -84,7 +92,6 @@
         </nav>
 
         <div class="overlay"></div>
-
 
 
         <!-- Start of first page -->
@@ -101,7 +108,8 @@
                     </div>
                 </button>
 
-            </div><!-- /header -->
+            </div>
+            <!-- /header -->
 
             <div role="main" class="ui-content">
                 <div class='bodyContainer'>
@@ -117,29 +125,29 @@
                     <div class="line"></div>
 
                     <h2>Lorem Ipsum Dolor</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                        officia deserunt mollit anim id est laborum.</p>
 
                     <div class="line"></div>
 
                     <h2>Lorem Ipsum Dolor</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                        officia deserunt mollit anim id est laborum.</p>
 
                     <div class="line"></div>
 
                     <h3>Lorem Ipsum Dolor</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                        officia deserunt mollit anim id est laborum.</p>
                 </div>
 
                 <script>
@@ -173,11 +181,14 @@
                         }
                     });
                 </script>
-            </div><!-- /content -->
+            </div>
+            <!-- /content -->
 
             <div data-role="footer">
-            </div><!-- /footer -->
-        </div><!-- /page -->
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
 
         <!-- Start of second page -->
         <div data-role="page" id="login">
@@ -193,37 +204,48 @@
                 </button>
 
 
-            </div><!-- /header -->
+            </div>
+            <!-- /header -->
 
             <div role="main" class="ui-content">
-                <div id="login">
+                <div id="loginForm">
                     <div class="imgcontainer">
-                        <img src="assets/images/img_avatar2.png" alt="Avatar" class="avatar">
+                        <h3 class="title formTitle">Sign In</h3>
                     </div>
 
-                    <div class="container">
-                        <label for="uname"><b>Email</b></label>
+                    <div class="container loginInput">
+
                         <input type="text" placeholder="Enter Email" name="email" required>
 
-                        <label for="psw"><b>Password</b></label>
+
                         <input type="password" placeholder="Enter Password" name="psw" required>
 
                         <button id='loginButton' type="button">Login</button>
 
                     </div>
 
-                    <div class="container" style="background-color:#f1f1f1">
+                    <div class="container widget">
+
+                        <span class="forget-psw">Forgot
+                            <a href="#">password?</a>
+                        </span>
+                        <br/>
+
                         <button type="button" class="cancelbtn">Cancel</button>
-                        <span class="psw">Forgot <a href="#">password?</a></span><br />
-                        <span class="psw">Create an account <a href="#signup">click here</a></span>
+                        <span class="createAcc">Don't Have Account ?
+                            <a href="#signup">Create Account.</a>
+                        </span>
                     </div>
                 </div>
 
-            </div><!-- /content -->
+            </div>
+            <!-- /content -->
 
             <div data-role="footer">
-            </div><!-- /footer -->
-        </div><!-- /page -->
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
 
         <div data-role="page" id="signup">
 
@@ -238,38 +260,131 @@
                 </button>
 
 
-            </div><!-- /header -->
+            </div>
+            <!-- /header -->
 
             <div role="main" class="ui-content">
-                <form id="signup" style="border:1px solid #ccc">
-                    <div class="container">
-                        <h1>Sign Up</h1>
-                        <p>Please fill in this form to create an account.</p>
-                        <hr>
+                <form id="signupForm">
 
-                        <label for="email"><b>Email</b></label>
-                        <input type="text" placeholder="Enter Email" id="signEmail" name="email" required />
+                    <h1 class="formTitle title ">Sign Up</h1>
 
-                        <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" id='signupPsw' name="psw" required />
+                    <div class="container loginInput">
 
-                        <label for="psw-repeat"><b>Repeat Password</b></label>
-                        <input type="password" placeholder="Repeat Password" id='signupPsw-repeat' name="psw-repeat"
-                            required />
+                        <input type="text" placeholder="Enter Email" id="signEmail" name="email" required/>
 
-                        <label>
-                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
-                            Remember me
-                        </label>
 
-                        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                        <input type="password" placeholder="Enter Password" id='signupPsw' name="psw" required/>
 
-                        <div class="clearfix">
-                            <button type="button" onclick="clearSignup()" class="cancelbtn">Cancel</button>
-                            <button type="submit" class="signupbtn">Sign Up</button>
+                        <input type="password" placeholder="Repeat Password" id='signupPsw-repeat' name="psw-repeat" required/>
+
+                        <button type="submit" id="signupbtn">Sign Up</button>
+
+
+                        <div class="container">
+
+                            <p>By creating an account you agree to our
+                                <a href="#" style="color:dodgerblue">Terms & Privacy
+                                </a>.
+                            </p>
+
                         </div>
                     </div>
                 </form>
+
+            </div>
+            <!-- /content -->
+
+            <div data-role="footer">
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
+
+
+        <div data-role="page" id="profile">
+
+            <div data-role="header">
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <!-- <i class="fas fa-align-left"></i> -->
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+            </div>
+            <!-- /header -->
+
+            <div role="main" class="ui-content">
+
+                <div class="imgcontainer">
+                    <h3 class="title">User Profile</h3>
+
+                    <img class="logoImg profileImg" src="assets/images/logo.png">
+                </div>
+
+                <div class="container profileBck">
+                    <div class="grid-container">
+                        <div class="item1">age
+                            <span>75</span>
+                            <span class="profileYear">year</span>
+                        </div>
+                        <div class="item2">blood
+                            <span>B+</span>
+                        </div>
+                        <div class="item3">gender
+                            <span>Male</span>
+                        </div>
+                        <div class="item4">height
+                            <span>180</span>
+                        </div>
+                        <div class="item5">weight
+                            <span>90</span>
+                            <span class="profilekg">kg</span>
+                        </div>
+                        <div class="item6">goal
+                            <span>75%</span>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- /content -->
+
+            <div data-role="footer">
+            </div> <!-- /footer -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="select">
+
+            <div data-role="header">
+
+
+            </div> <!-- /header -->
+
+            <div role="main" class="ui-content">
+
+
+                <div class="container title">
+
+                    <h2>WELCOME</h2>
+
+                </div>
+
+                <div class="container box">
+
+                    <div class="imgcontainer">
+                        <img class="logoImg profileImg" src="assets/images/logo.png">
+                    </div>
+                    <h3 class="title">Are You A Heart Patient</h3>
+                    <button type="button" id="btn-h-yes" onclick="clearSignup()" class="heartPositivebtn">Yes</button>
+                    <button type="button" id="btn-h-no" onclick="clearSignup()" class="heartNegativebtn">No</button>
+
+                    <span class="createAcc">Already Have An Account ?
+                        <a href="#login">Login.</a>
+                    </span>
+
+
+                </div>
+
 
             </div><!-- /content -->
 
@@ -277,16 +392,80 @@
             </div><!-- /footer -->
         </div><!-- /page -->
 
+        <div data-role="page" id="vegMeal">
+
+            <div data-role="header">
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+
+            </div> <!-- /header -->
+
+            <div role="main" class="ui-content">
+
+                <h2 class="title">For vegetarians</h2>
+
+                <div class="container custom-container">
+
+                    <h3>Recommandation For Vegetarians</h3>
+
+                    <ul>
+                        <li>
+                            Eat at least one dark green vegetable and one orange vegetable each day.
+                        </li>
+                        <li>Have vegetables and fruit more often than juice.</li>
+                        <li>Make at least half of your grain products whole grain each day.</li>
+                        <li>Have meat alternatives such as beans, lentils and tofu often.</li>
+                        <li>Include a small amount of unsaturated fat each day.</li>
+                        <li>Satisfy your thirst with safe drinking water.</li>
+                    </ul>
+
+                    <h3>Food program</h3>
+                    <p>As with any food program, it is important to do some planning to meet nutrient needs. Here's what you may want to consider:</p>
+
+                    <h4>Protein</h4>
+
+                    <p>Plant-based foods can provide all the protein you need. Protein-rich plant foods include:</p>
+
+                    <ul>
+                        <li>All soy products such as tofu, tempeh and beverages</li>
+                        <li>Cooked beans, peas and lentils</li>
+                        <li>Peanuts and peanut butter</li>
+                        <li>Most nuts and seeds</li>
+                    </ul>
+
+                    <p>It is no longer necessary to combine proteins for example, beans with grains, in the same meal in order to maximize protein absorption. Other protein options include eggs (also rich in zinc and iron) and milk (high in zinc). Whole grains such as quinoa also provide protein and are great sources of minerals.</p>
+
+                    <h4>Iron</h4>
+
+                    <p>Vegetarians are at no more risk of iron deficiency than meat eaters. While the version of iron found in meat (heme-iron) is more readily absorbed than the non-heme iron found in plant sources, absorption can be enhanced by combining non-heme iron options with foods high in vitamin C such as citrus fruits, tomatoes, broccoli or berries. Good plant sources of iron include dark green leafy vegetables, dried beans or legumes, iron-enriched products (check labels), nutritional yeast and dried fruit. An example may be a romaine lettuce salad with mandarin oranges.</p>
+
+                    <h4>Calcium and vitamin D</h4>
+
+                    <p>Calcium is important for strong bones and vitamin D is necessary for your body to be able to absorb calcium. Dairy products, almonds, sesame seeds, dark-green vegetables (such as broccoli, bok choy and kale), and black strap molasses contain calcium. Other products are fortified with calcium, including soy and rice beverages, tofu and orange juice </p>
+
+                    <p>Vitamin D is often added to milk and some yogurt (but not cheese), soy and rice beverages, and fortified margarine. While sunlight allows us to produce our own vitamin D through our skin, it is typically not sufficient during Canadian winters. As a result, these supplemented sources are important, especially for babies, children and older adults. We recommend for men and women over 50 years of age to take a daily supplement of Vitamin D of 400 IU.</p>
 
 
+                    <h4>Vitamin B 12</h4>
 
+                    <p>This vitamin is necessary for cell division and blood formation. It can be found in fortified cereals, soy and rice beverages, and some types of nutritional yeast. It's important to read labels to ensure you are getting enough B 12. If you are vegetarian or vegan, consult your health professional about a B 12 supplement if you are not sure you're getting enough from your diet</p>
 
+                </div>
+               
+
+            </div><!-- /content -->
+
+            <div data-role="footer">
+            </div><!-- /footer -->
+        </div> <!-- /page -->
 
 
     </div>
-
-
-
 
 
     <script type="text/javascript" src="assets/js/jquery.js"></script>
@@ -304,11 +483,9 @@
 
     <!-- <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script> -->
     <script>
-        // Initialize Firebase
+    // Initialize Firebase
 
     </script>
-
-
 
 
     <script type="text/javascript">
@@ -348,18 +525,9 @@
         });
 
 
-
-
     </script>
 
     <script>
-
-
-
-
-
-
-
 
 
     </script>
