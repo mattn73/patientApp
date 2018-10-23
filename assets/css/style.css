@@ -1,8 +1,8 @@
 /*
     DEMO STYLE
 */
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -16,9 +16,7 @@ p {
     color: #999;
 }
 
-a,
-a:hover,
-a:focus {
+a, a:hover, a:focus {
     color: inherit;
     text-decoration: none;
     transition: all 0.3s;
@@ -118,7 +116,6 @@ a:focus {
 
 #sidebar ul.components li {
     /*margin-bottom: 4%;*/
-
 }
 
 #sidebar ul.components li a {
@@ -131,11 +128,9 @@ a:focus {
     height: 59px;
     font-family: "Segoe UI";
     font-weight: 400;
-
 }
 
 #sidebar img, .logoImg {
-
     width: 75%;
     margin-left: 12%;
     margin-right: 10%;
@@ -161,11 +156,9 @@ a:focus {
     background: #8487947d;
 }
 
-#sidebar ul li.active > a,
-a[aria-expanded="true"] {
+#sidebar ul li.active>a, a[aria-expanded="true"] {
     color: #353030;
     background: #8487947d;
-
 }
 
 a[data-toggle="collapse"] {
@@ -203,8 +196,7 @@ a.download {
     color: #7386D5;
 }
 
-a.article,
-a.article:hover {
+a.article, a.article:hover {
     background: #6d7fcc !important;
     color: #fff !important;
 }
@@ -244,7 +236,8 @@ body {
 .row {
     display: flex;
     width: 80%;
-    margin: 0 auto;;
+    margin: 0 auto;
+    ;
 }
 
 .hamburger {
@@ -266,9 +259,7 @@ body {
 }
 
 .side-header {
-
     background-image: url(../images/heart.jpg);
-
 }
 
 #sidebarCollapse {
@@ -278,21 +269,18 @@ body {
 }
 
 .list-unstyled svg {
-
     margin-right: 4%;
     margin-left: 4%;
     color: #fff;
-
 }
 
 .list-unstyled li:hover {
-
     color: #353030;
     background: #8487947d;
-
 }
 
 /*Progress Bar */
+
 .progress {
     width: 150px;
     height: 150px;
@@ -314,7 +302,7 @@ body {
     left: 0;
 }
 
-.progress > span {
+.progress>span {
     width: 50%;
     height: 100%;
     overflow: hidden;
@@ -468,39 +456,68 @@ body {
 }
 
 .bodyContainer h2 {
-
     text-align: center;
-
 }
 
 .bodyContainer {
-
     width: 100%;
 }
 
 .progressBar {
-
     margin-right: auto;
     margin-left: auto;
     align-content: center;
 }
 
 #progress {
-
     margin: 18px auto;
     width: 200px;
     height: 200px;
     position: relative;
-
 }
 
 .progressbar-text {
-
     color: #fff !important;
 }
 
-.forget-psw {
+.custom-header {
+    width: 100%;
+    height: 63px;
+    box-shadow: 0 3px 11px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(101deg, #19769f 0%, #35d8a6 100%);
+    margin-top: -4%;
+    display: grid;
+    grid-template-areas: 'hamburger header-title header-title header-title ';
+    grid-gap: 10px;
+}
 
+.custom-header .header-hamburger {
+    grid-area: hamburger;
+}
+
+.custom-header .header-title {
+    grid-area: header-title;
+}
+
+.custom-header .title {
+    margin: 25px auto 2% auto;
+    height: 28px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    text-align: left;
+}
+
+.custom-header img {
+    width: 18px;
+    margin-top: 21px;
+    margin-left: 12px;
+    margin-right: 22px;
+}
+
+.forget-psw {
     width: 112px;
     height: 14px;
     color: #95989a;
@@ -511,7 +528,6 @@ body {
 }
 
 .createAcc {
-
     width: 272px;
     height: 16px;
     color: #19769f;
@@ -528,23 +544,17 @@ input[type=text], input[type=password] {
     border-radius: 4px;
     border: 1px solid #d5d5d5;
     background-color: #ffffff;
-
 }
 
 .loginInput div {
-
     margin-bottom: 7%;
-
 }
 
 #loginForm {
-
     margin: 23% 0 0 0;
 }
 
-
-
-#loginForm button,#signupForm button {
+#loginForm button, #signupForm button {
     width: 100%;
     height: 49px;
     box-shadow: 0 9px 10px rgba(0, 0, 0, 0.16);
@@ -566,7 +576,6 @@ input[type=text], input[type=password] {
     background: #ff4141;
     margin: 1% 0 7% 0;
     color: #ffffff;
-
 }
 
 #loginForm .imgcontainer {
@@ -594,12 +603,12 @@ img.avatar {
 }
 
 /* Change styles for span and cancel button on extra small screens */
+
 @media screen and (max-width: 300px) {
     span.psw {
         display: block;
         float: none;
     }
-
     #body .cancelbtn, #body .signupbtn {
         width: 100%;
     }
@@ -637,7 +646,7 @@ img.avatar {
     margin-top: 10%;
 }
 
-.grid-container > div {
+.grid-container>div {
     background-color: #ffff;
     text-align: center;
     padding: 12px 0;
@@ -646,16 +655,13 @@ img.avatar {
     border-bottom: 1px solid #d5d5d5;
     height: 100px;
     text-transform: capitalize;
-
 }
 
 .item1, .item2, .item4, .item5 {
-
     border-right: 1px solid #d5d5d5;
 }
 
 .profileBck {
-
     width: 100%;
     height: 536px;
     box-shadow: 0 -6px 6px rgba(0, 0, 0, 0.11);
@@ -663,23 +669,25 @@ img.avatar {
     background-color: #ffffff;
 }
 
-#profile{
-
+#profile {
     background-image: linear-gradient(150deg, #19769f 0%, #35d8a6 100%);
 }
 
-#profile .hamburger, #select .hamburger {
+.reverse-hamburger {
     display: block;
     cursor: pointer;
     width: 80px;
-    margin-top: -5px;
+    margin-top: 13px;
     margin-left: -28px;
     background-color: transparent;
     color: #ffffff;
 }
 
-.title {
+.reverse-hamburger span {
+    background: #ffffff;
+}
 
+.title {
     margin: 2% auto 2% auto;
     width: 45%;
     width: 102px;
@@ -690,9 +698,7 @@ img.avatar {
     font-weight: 400;
 }
 
-
-.formTitle   {
-
+.formTitle {
     width: 45%;
     height: 28px;
     color: #19769f;
@@ -703,13 +709,11 @@ img.avatar {
 }
 
 .profileImg {
-
     margin-top: 0;
     margin-bottom: -20%;
 }
 
 .grid-container span {
-
     display: block;
     height: 17px;
     color: #95989a;
@@ -717,21 +721,18 @@ img.avatar {
     font-size: 12px;
     font-weight: 300;
     margin-top: 13%;
-
 }
 
 .profileYear {
-
     margin-top: 0 !important;
 }
 
 .profileKg {
-
-    margin-top: 0 !important;;
+    margin-top: 0 !important;
+    ;
 }
 
 #select h2 {
-
     width: 155px;
     height: 28px;
     color: #ffffff;
@@ -740,12 +741,9 @@ img.avatar {
     font-weight: 400;
     position: absolute;
     top: 25%;
-
-
 }
 
 #select .title {
-
     top: 9%;
     padding: 0;
     height: 50px;
@@ -755,30 +753,26 @@ img.avatar {
 }
 
 .box {
-
     background-color: #ffffff;
     height: 680px;
     padding-top: 21%;
 }
 
-#select .ui-content{
-    padding:0;
+#select .ui-content {
+    padding: 0;
 }
 
-.box .title{
-
+.box .title {
     width: 100%;
     height: 28px;
     color: #19769f;
     font-family: "Gotham Rounded";
     font-size: 24px;
     font-weight: 500;
-    margin-left: 7%;
-
+    margin-left: 75px;
 }
 
-.box button{
-
+.box button {
     width: 158px;
     height: 75px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
@@ -791,48 +785,257 @@ img.avatar {
     font-size: 1.4em;
     position: relative;
     top: 77px;
-    left: 1%;
+    left: 34px;
 }
 
+#btn-h-yes {}
 
-#btn-h-yes{
-
-
-
-}
-
-#btn-h-no{
-
+#btn-h-no {
     /*background-color: #FF0000 !important;*/
-
 }
 
-#select{
-
+#select {
     background-image: linear-gradient(101deg, #19769f 0%, #35d8a6 100%);
 }
 
-
-#select .createAcc{
-
+#select .createAcc {
     position: relative;
-    top: 18%;
+    top: 167px;
     font-size: 1.1em;
+    margin-left: 64px;
 }
 
-.imgcontainer .title{
-
+.imgcontainer .title {
     font-size: 41px;
     width: 88%;
-    text-align:center;
+    text-align: center;
 }
 
+#appointement .profileImg {
+    width: 25%;
+    border: 1px solid #eeeeee;
+    margin-left: -11px;
+    border-radius: 50%;
+}
 
+.doctorName {
+    width: 130px;
+    height: 24px;
+    color: #19769f;
+    font-size: 18px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    margin: 3% 4% 3% -8%;
+    position: absolute;
+}
 
+#btn-appAppoint {
+    position: absolute;
+    top: 82%;
+    width: 87%;
+    margin-left: auto;
+    margin-right: auto;
+    right: 7%;
+    background-color: #19769f !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+    text-shadow: 0 0px 0 #f3f3f300 !important;
+}
 
+.doctorDetail {
+    position: absolute;
+    width: 100%;
+}
 
+.doctorQua {
+    width: 69px;
+    height: 17px;
+    color: #51565f;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    margin: 10% 4% 3% -8%;
+    position: absolute;
+}
 
+.doctorAddres {
+    width: 100%;
+    height: 17px;
+    color: #51565f;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    margin: 15% 4% 3% -8%;
+    position: absolute;
+}
 
+.custom-container {
+    position: absolute;
+    width: 91%;
+    margin-top: 41%;
+    height: 332px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.11);
+    border-radius: 4px;
+    border: 1px solid #5fe5bc;
+    background-color: #ffffff;
+}
 
+.custom-container span {
+    position: relative;
+    display: block;
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid #d5d5d5;
+    padding-top: 10px;
+}
 
+.date {
+    width: 119px;
+    height: 17px;
+    color: #616161;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-weight: 600;
+}
 
+.time {
+    height: 122px !important;
+}
+
+.time h5 {
+    margin-top: 61px;
+    width: 50px;
+    height: 19px;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 19px;
+    font-weight: 500;
+}
+
+#meal .ui-content {
+    padding: 0;
+}
+
+.couverImg, .couverImg img {
+    width: 100%;
+    max-height: 225px
+}
+
+.mealBtn {
+    width: 100%;
+    box-shadow: 0 1px 6px rgba(61, 61, 61, 0.18);
+    border-radius: 4px;
+    border: 1px solid #5fe5bc;
+    background-color: #ffffff;
+    text-align: center;
+    padding-top: 7%;
+}
+
+.mealBtn img {
+    width: 26%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mealGrid {
+    display: grid;
+    grid-template-areas: 'title title' 'veg veg' 'non-veg non-veg';
+    grid-gap: 10px;
+}
+
+#btnNonVeg {
+    grid-area: non-veg;
+}
+
+#btnVeg {
+    grid-area: veg;
+}
+
+.mealGrid span {
+    color: #3d3d3d;
+    font-family: "Gotham Rounded";
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.mealGrid h3 {
+    grid-area: title;
+    width: 100%;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.cusotm-h3 {
+    width: 100%;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 33px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.info p {
+    color: #676767;
+    font-size: 1.125rem;
+    letter-spacing: .5px;
+}
+
+.info li {
+    color: #676767;
+    font-size: 1.125rem;
+    letter-spacing: .5px;
+    line-height: 1.65;
+}
+
+.info h3 {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.info h4 {
+    font-weight: 700;
+}
+
+#myProfile .input {
+    margin-top: 25%;
+}
+
+#myProfile h3 {
+    margin-left: 30px;
+}
+
+.ui-selectmenu .ui-button {
+    width: 100%;
+    height: 41px;
+    border-radius: 4px;
+    border: 1px solid #d5d5d5;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.ui-icon-caret-d {
+    background-image: url("../images/dropArrow.png");
+}
+
+/** Overwrite Bootstrap */
+
+.list-group {
+    margin-bottom: 14px;
+}
+
+.btn-custom {
+    background-color: #19769f !important;
+    border-color: transparent !important;
+}
+
+.list-group-item{
+
+    color: #616161 !important;
+}

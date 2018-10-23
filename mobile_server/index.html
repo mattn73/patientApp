@@ -1,0 +1,681 @@
+<html lang="en">
+
+<head>
+
+    <title>APP</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.theme.min.css"/>
+    <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.structure.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+
+
+    <script defer src=" assets/js/solid.min.js"></script>
+    <script defer src=" assets/js/fontawesome.min.js"></script>
+
+    <script src=" assets/js/Chart.bundle.min.js"></script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+
+<body>
+
+<div class="wrapper" id="body">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div id="dismiss">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+
+        <div class="sidebar-header">
+            <img class="logoImg" src="assets/images/logo.png">
+            <h3>kardia</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+
+
+            <li class="active">
+                <a id="side-home" onclick="addActive('#side-home');" href="#home">
+                    <i class="fas fa-home"></i> Home</a>
+
+            </li>
+
+            <li>
+                <a id="side-report" onclick="addActive('#side-report');" href="#report">
+                    <i class="fas fa-chart-bar"></i>
+                    Report</a>
+            </li>
+
+            <li>
+                <a id="side-reminder" onclick="addActive('#side-reminder');" href="#">
+                    <i class="fas fa-bell"></i>
+                    Reminder</a>
+            </li>
+
+            <li>
+                <a id="side-meal" onclick="addActive('#side-meal');" href="#">
+                    <i class="fas fa-utensils"></i> Meal Plans
+                </a>
+            </li>
+
+            <li>
+                <a id="side-signIn" onclick="addActive('#side-signIn');" href="#login">
+                    <i class="fas fa-user"></i>
+                    signIn</a>
+
+                <a id="side-signOut" onclick="signOut();" href="#" style="display:none">
+                    <i class="fas fa-user"></i>
+                    signOut</a>
+            </li>
+
+            <li>
+                <a id="side-setting" onclick="addActive('#side-setting');" href="#">
+                    <i class="fas fa-cog"></i>
+                    Setting</a>
+            </li>
+
+            <li>
+                <a id="side-about" onclick="addActive('#side-about');" href="#">
+                    <i class="fas fa-question"></i>
+                    About</a>
+
+            </li>
+        </ul>
+
+
+    </nav>
+
+    <div class="overlay"></div>
+
+
+    <!-- Start of first page -->
+    <div data-role="page" id="home">
+
+        <div data-role="header">
+
+            <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                <!-- <i class="fas fa-align-left"></i> -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </button>
+
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+            <div class='bodyContainer'>
+                <h2>Welcome to Home</h2>
+                <div class="container">
+                    <div id="progress"></div>
+                </div>
+
+                <div class="line"></div>
+
+                <canvas id="myChart" width="400" height="400"></canvas>
+
+                <div class="line"></div>
+
+                <h2>Lorem Ipsum Dolor</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                    qui
+                    officia deserunt mollit anim id est laborum.</p>
+
+                <div class="line"></div>
+
+                <h2>Lorem Ipsum Dolor</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                    qui
+                    officia deserunt mollit anim id est laborum.</p>
+
+                <div class="line"></div>
+
+                <h3>Lorem Ipsum Dolor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                    labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum
+                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                    qui
+                    officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <script>
+                var ctx = document.getElementById("myChart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ["Day 0", "Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6"],
+                        datasets: [{
+                            label: '# of Votes',
+                            data: [12, 19, 3, 5, 2, 3],
+                            backgroundColor: [
+                                'rgb(50,165,55)',
+
+                            ],
+                            borderColor: [
+                                'rgb(0,111,5)'
+
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            </script>
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+    <!-- Start of second page -->
+    <div data-role="page" id="login">
+
+        <div data-role="header">
+            <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                <!-- <i class="fas fa-align-left"></i> -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </button>
+
+
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+            <div id="loginForm">
+                <div class="imgcontainer">
+                    <h3 class="title formTitle">Sign In</h3>
+                </div>
+
+                <div class="container loginInput">
+
+                    <input type="text" placeholder="Enter Email" name="email" required>
+
+
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button id='loginButton' type="button">Login</button>
+
+                </div>
+
+                <div class="container widget">
+
+                        <span class="forget-psw">Forgot
+                            <a href="#">password?</a>
+                        </span>
+                    <br/>
+
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <span class="createAcc">Don't Have Account ?
+                            <a href="#signup">Create Account.</a>
+                        </span>
+                </div>
+            </div>
+
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+    <div data-role="page" id="signup">
+
+        <div data-role="header">
+            <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                <!-- <i class="fas fa-align-left"></i> -->
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </button>
+
+
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+            <form id="signupForm">
+
+                <h1 class="formTitle title ">Sign Up</h1>
+
+                <div class="container loginInput">
+
+                    <input type="text" placeholder="Enter Email" id="signEmail" name="email" required/>
+
+
+                    <input type="password" placeholder="Enter Password" id='signupPsw' name="psw" required/>
+
+                    <input type="password" placeholder="Repeat Password" id='signupPsw-repeat' name="psw-repeat"
+                           required/>
+
+                    <button type="submit" id="signupbtn">Sign Up</button>
+
+
+                    <div class="container">
+
+                        <p>By creating an account you agree to our
+                            <a href="#" style="color:dodgerblue">Terms & Privacy
+                            </a>.
+                        </p>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+
+
+    <div data-role="page" id="profile">
+
+        <div data-role="header">
+            <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                <!-- <i class="fas fa-align-left"></i> -->
+                <div class="hamburger reverse-hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </button>
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+
+            <div class="imgcontainer">
+                <h3 class="title">User Profile</h3>
+
+                <img class="logoImg profileImg" src="assets/images/logo.png">
+            </div>
+
+            <div class="container profileBck">
+                <div class="grid-container">
+                    <div class="item1">age
+                        <span>75</span>
+                        <span class="profileYear">year</span>
+                    </div>
+                    <div class="item2">blood
+                        <span>B+</span>
+                    </div>
+                    <div class="item3">gender
+                        <span>Male</span>
+                    </div>
+                    <div class="item4">height
+                        <span>180</span>
+                    </div>
+                    <div class="item5">weight
+                        <span>90</span>
+                        <span class="profilekg">kg</span>
+                    </div>
+                    <div class="item6">goal
+                        <span>75%</span>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /content -->
+
+        <div data-role="footer">
+        </div> <!-- /footer -->
+    </div><!-- /page -->
+
+    <div data-role="page" id="select">
+
+        <div data-role="header">
+
+
+        </div> <!-- /header -->
+
+        <div role="main" class="ui-content">
+
+
+            <div class="container title">
+
+                <h2>WELCOME</h2>
+
+            </div>
+
+            <div class="container box">
+
+                <div class="imgcontainer">
+                    <img class="logoImg profileImg" src="assets/images/logo.png">
+                </div>
+                <h3 class="title">Are You A Heart Patient</h3>
+                <button type="button" id="btn-h-yes" onclick="clearSignup()" class="heartPositivebtn">Yes</button>
+                <button type="button" id="btn-h-no" onclick="clearSignup()" class="heartNegativebtn">No</button>
+
+                <span class="createAcc">Already Have An Account ?
+                        <a href="#login">Login.</a>
+                    </span>
+
+
+            </div>
+
+
+        </div><!-- /content -->
+
+        <div data-role="footer">
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <div data-role="page" id="vegMeal" class="info">
+
+        <div data-role="header">
+            <div class="custom-header">
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <div class="hamburger reverse-hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+
+                <h3 class="title">Meals Action</h3>
+            </div>
+
+        </div> <!-- /header -->
+
+        <div role="main" class="ui-content">
+
+            <h2 class="cusotm-h3">For vegetarians</h2>
+
+            <div class="container">
+
+                <h3>Recommandation</h3>
+
+                <ul>
+                    <li>
+                        Eat at least one dark green vegetable and one orange vegetable each day.
+                    </li>
+                    <li>Have vegetables and fruit more often than juice.</li>
+                    <li>Make at least half of your grain products whole grain each day.</li>
+                    <li>Have meat alternatives such as beans, lentils and tofu often.</li>
+                    <li>Include a small amount of unsaturated fat each day.</li>
+                    <li>Satisfy your thirst with safe drinking water.</li>
+                </ul>
+
+                <h3>Food program</h3>
+                <p>As with any food program, it is important to do some planning to meet nutrient needs. Here's
+                    what you may want to consider:</p>
+
+                <h4>Protein</h4>
+
+                <p>Plant-based foods can provide all the protein you need. Protein-rich plant foods include:</p>
+
+                <ul>
+                    <li>All soy products such as tofu, tempeh and beverages</li>
+                    <li>Cooked beans, peas and lentils</li>
+                    <li>Peanuts and peanut butter</li>
+                    <li>Most nuts and seeds</li>
+                </ul>
+
+                <p>It is no longer necessary to combine proteins for example, beans with grains, in the same meal
+                    in order to maximize protein absorption. Other protein options include eggs (also rich in zinc
+                    and iron) and milk (high in zinc). Whole grains such as quinoa also provide protein and are
+                    great sources of minerals.</p>
+
+                <h4>Iron</h4>
+
+                <p>Vegetarians are at no more risk of iron deficiency than meat eaters. While the version of iron
+                    found in meat (heme-iron) is more readily absorbed than the non-heme iron found in plant
+                    sources, absorption can be enhanced by combining non-heme iron options with foods high in
+                    vitamin C such as citrus fruits, tomatoes, broccoli or berries. Good plant sources of iron
+                    include dark green leafy vegetables, dried beans or legumes, iron-enriched products (check
+                    labels), nutritional yeast and dried fruit. An example may be a romaine lettuce salad with
+                    mandarin oranges.</p>
+
+                <h4>Calcium and vitamin D</h4>
+
+                <p>Calcium is important for strong bones and vitamin D is necessary for your body to be able to
+                    absorb calcium. Dairy products, almonds, sesame seeds, dark-green vegetables (such as broccoli,
+                    bok choy and kale), and black strap molasses contain calcium. Other products are fortified with
+                    calcium, including soy and rice beverages, tofu and orange juice </p>
+
+                <p>Vitamin D is often added to milk and some yogurt (but not cheese), soy and rice beverages, and
+                    fortified margarine. While sunlight allows us to produce our own vitamin D through our skin, it
+                    is typically not sufficient during Canadian winters. As a result, these supplemented sources
+                    are important, especially for babies, children and older adults. We recommend for men and women
+                    over 50 years of age to take a daily supplement of Vitamin D of 400 IU.</p>
+
+
+                <h4>Vitamin B 12</h4>
+
+                <p>This vitamin is necessary for cell division and blood formation. It can be found in fortified
+                    cereals, soy and rice beverages, and some types of nutritional yeast. It's important to read
+                    labels to ensure you are getting enough B 12. If you are vegetarian or vegan, consult your
+                    health professional about a B 12 supplement if you are not sure you're getting enough from your
+                    diet</p>
+
+            </div>
+
+
+        </div><!-- /content -->
+
+        <div data-role="footer">
+        </div><!-- /footer -->
+    </div> <!-- /page -->
+
+
+    <div data-role="page" id="meal">
+
+        <div data-role="header">
+
+            <div class="custom-header">
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <div class="hamburger reverse-hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+
+                <h3 class="title">Meals Action</h3>
+
+            </div>
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+
+            <div class="couverImg">
+
+                <img src="assets/images/mealCover.jpg">
+
+            </div>
+
+            <div class="container mealGrid">
+                <h3 class="title">SELECT YOUR PREFRENCES</h3>
+
+                <div id="btnNonVeg" class="mealBtn">
+                    <a href="#vegMeal">
+                        <img src="assets/images/logo-nonveg.png">
+                        <span>Non vegetarian</span>
+                    </a>
+
+                </div>
+
+
+                <div id="btnVeg" class="mealBtn">
+                    <a href="#nonVegMeal">
+                        <img src="assets/images/logo-veg.png">
+                        <span>vegetarian</span>
+                    </a>
+                </div>
+
+
+            </div>
+
+        </div> <!-- /content -->
+
+        <div data-role="footer">
+        </div> <!-- /footer -->
+    </div><!-- /page -->
+
+
+    <div data-role="page" id="appointement">
+
+        <div data-role="header">
+
+            <div class="custom-header">
+                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                    <div class="hamburger reverse-hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </button>
+
+                <h3 class="title">Appointment Details</h3>
+
+            </div>
+        </div>
+        <!-- /header -->
+
+        <div role="main" class="ui-content">
+
+            <div class="doctorDetail">
+
+
+                <img class="logoImg profileImg" src="assets/images/img_avatar2.png">
+                <span class="doctorName">Dr. John Smith</span>
+                <span class="doctorQua">MSC,MBBS</span>
+                <span class="doctorAddres">Dishant Hospital, Ring road, Nagpur</span>
+            </div>
+
+            <div class="container custom-container">
+
+                <span class="date">02 - November - 2017</span>
+                <span class="Time">11AM to 1PM <h5> Address</h5></span>
+                <span class="appointAddress">Dishant Hospital, Ring road, Nagpur</span>
+
+            </div>
+
+            <button type="button" id="btn-appAppoint" onclick="appAppoint()" class="heartPositivebtn">Approuve
+                Appointment
+            </button>
+        </div> <!-- /content -->
+
+        <div data-role="footer">
+        </div> <!-- /footer -->
+    </div><!-- /page -->
+
+
+</div>
+
+
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/popper.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.mobile.custom.min.js"></script>
+<script type="text/javascript" src="assets/js/progressbar.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
+
+
+<!-- <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script> -->
+<script>
+    // Initialize Firebase
+
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        updateProgress();
+
+        $("#sidebar").mCustomScrollbar({
+            theme: "minimal"
+        });
+
+        $('#dismiss, .overlay').on('click', function () {
+            $('#sidebar').removeClass('active');
+            $('.overlay').removeClass('active');
+        });
+
+        $('.sidebarCollapse').on('click', function () {
+            $('#sidebar').addClass('active');
+            $('.overlay').addClass('active');
+            $('.collapse.in').toggleClass('in');
+            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+        });
+    });
+
+    $(document).ready(function () {
+        $(document).on("swipeleft swiperight", function (e) {
+
+            if (!($(".overlay").hasClass('active'))) {
+                if (e.type === "swiperight") {
+                    $('#sidebar').addClass('active');
+                    $('.overlay').addClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+
+                }
+            }
+        });
+    });
+
+
+</script>
+
+<script>
+
+
+</script>
+
+<script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+
+</html>

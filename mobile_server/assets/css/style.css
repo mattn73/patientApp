@@ -1,0 +1,1007 @@
+/*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+    width: 265px;
+    background-image: linear-gradient(156deg, #19769f 0%, #35d8a6 100%);
+    opacity: 0.93;
+    position: fixed;
+    top: 0;
+    left: -331px;
+    height: 100vh;
+    z-index: 999;
+    color: rgb(255, 255, 255);
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar h3 {
+    padding-top: 13%;
+    color: #ffff;
+    text-align: center;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: transparent;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#dismiss:hover {
+    color: #fff0dc;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    min-height: 200px;
+    margin-bottom: 3%;
+}
+
+#sidebar ul.components li {
+    /*margin-bottom: 4%;*/
+}
+
+#sidebar ul.components li a {
+    color: #ffffff;
+    font-family: "Gotham Rounded";
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+    text-transform: uppercase;
+    height: 59px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+}
+
+#sidebar img, .logoImg {
+    width: 75%;
+    margin-left: 12%;
+    margin-right: 10%;
+    margin-top: 16%;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    width: 100%;
+    border: 1px solid #ffffff;
+    opacity: 0.62;
+}
+
+#sidebar ul li a:hover {
+    color: #353030;
+    background: #8487947d;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #353030;
+    background: #8487947d;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+:root {
+    --main: #2f3435;
+    --bg: rgb(255, 255, 255);
+    --accent: salmon;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', sans serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--main);
+}
+
+.row {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;;
+}
+
+.hamburger {
+    display: block;
+    cursor: pointer;
+    width: 80px;
+    margin-top: -5px;
+    margin-left: -28px;
+    background-color: #fff;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--main);
+    margin: 7px auto;
+    transition: 0.2s ease-in;
+}
+
+.side-header {
+    background-image: url(../images/heart.jpg);
+}
+
+#sidebarCollapse {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    border: 0px;
+    background-color: transparent !important;
+}
+
+.list-unstyled svg {
+    margin-right: 4%;
+    margin-left: 4%;
+    color: #fff;
+}
+
+.list-unstyled li:hover {
+    color: #353030;
+    background: #8487947d;
+}
+
+/*Progress Bar */
+
+.progress {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+}
+
+.progress:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress > span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.progress .progress-left {
+    left: 0;
+}
+
+.progress .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+
+.progress .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+
+.progress .progress-right {
+    right: 0;
+}
+
+.progress .progress-right .progress-bar {
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+}
+
+.progress .progress-value {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: #44484b;
+    font-size: 24px;
+    color: #fff;
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.progress.blue .progress-bar {
+    border-color: #049dff;
+}
+
+.progress.blue .progress-left .progress-bar {
+    animation: loading-2 1.5s linear forwards 1.8s;
+}
+
+.progress.yellow .progress-bar {
+    border-color: #fdba04;
+}
+
+.progress.yellow .progress-left .progress-bar {
+    animation: loading-3 1s linear forwards 1.8s;
+}
+
+.progress.pink .progress-bar {
+    border-color: #ed687c;
+}
+
+.progress.pink .progress-left .progress-bar {
+    animation: loading-4 0.4s linear forwards 1.8s;
+}
+
+.progress.green .progress-bar {
+    border-color: #32a537;
+}
+
+.progress.green .progress-left .progress-bar {
+    animation: loading-5 1.2s linear forwards 1.8s;
+}
+
+@keyframes loading-1 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes loading-2 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(144deg);
+        transform: rotate(144deg);
+    }
+}
+
+@keyframes loading-3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes loading-4 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+
+@keyframes loading-5 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(126deg);
+        transform: rotate(126deg);
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .progress {
+        margin-bottom: 20px;
+    }
+}
+
+.bodyContainer h2 {
+    text-align: center;
+}
+
+.bodyContainer {
+    width: 100%;
+}
+
+.progressBar {
+    margin-right: auto;
+    margin-left: auto;
+    align-content: center;
+}
+
+#progress {
+    margin: 18px auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.progressbar-text {
+    color: #fff !important;
+}
+
+.forget-psw {
+    width: 112px;
+    height: 14px;
+    color: #95989a;
+    font-family: "Gotham Rounded";
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 46%;
+}
+
+.createAcc {
+    width: 272px;
+    height: 16px;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 0.9em;
+    font-weight: 500;
+    /* Text style for "Don't Have" */
+    color: #95989a;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    height: 41px;
+    border-radius: 4px;
+    border: 1px solid #d5d5d5;
+    background-color: #ffffff;
+}
+
+.loginInput div {
+    margin-bottom: 7%;
+}
+
+#loginForm {
+    margin: 23% 0 0 0;
+}
+
+#loginForm button, #signupForm button {
+    width: 100%;
+    height: 49px;
+    box-shadow: 0 9px 10px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+    background: linear-gradient(91deg, #19769f 0%, #35d8a6 100%);
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff;
+    font-family: "Gotham Rounded";
+}
+
+#loginForm button:hover {
+    opacity: 0.8;
+}
+
+#loginForm .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background: #ff4141;
+    margin: 1% 0 7% 0;
+    color: #ffffff;
+}
+
+#loginForm .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+#loginForm .widget {
+    padding: 19px;
+    padding-top: 18px;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+#login span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    #body .cancelbtn, #body .signupbtn {
+        width: 100%;
+    }
+}
+
+.item1 {
+    grid-area: age;
+}
+
+.item2 {
+    grid-area: blood;
+}
+
+.item3 {
+    grid-area: gender;
+}
+
+.item4 {
+    grid-area: height;
+}
+
+.item5 {
+    grid-area: weight;
+}
+
+.item6 {
+    grid-area: goal;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'age blood gender' 'height weight goal';
+    background-color: #ffff;
+    padding: 10px;
+    margin-top: 10%;
+}
+
+.grid-container > div {
+    background-color: #ffff;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1.2em;
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    height: 100px;
+    text-transform: capitalize;
+}
+
+.item1, .item2, .item4, .item5 {
+    border-right: 1px solid #d5d5d5;
+}
+
+.profileBck {
+    width: 100%;
+    height: 536px;
+    box-shadow: 0 -6px 6px rgba(0, 0, 0, 0.11);
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+#profile {
+    background-image: linear-gradient(150deg, #19769f 0%, #35d8a6 100%);
+}
+
+.reverse-hamburger {
+    display: block;
+    cursor: pointer;
+    width: 80px;
+    margin-top: 0px;
+    margin-left: -28px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.reverse-hamburger span {
+    background: #ffffff;
+}
+
+.title {
+    margin: 2% auto 2% auto;
+    width: 45%;
+    width: 102px;
+    height: 28px;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+}
+
+.formTitle {
+    width: 45%;
+    height: 28px;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 35px;
+    font-weight: 500;
+    margin-left: 5%;
+}
+
+.profileImg {
+    margin-top: 0;
+    margin-bottom: -20%;
+}
+
+.grid-container span {
+    display: block;
+    height: 17px;
+    color: #95989a;
+    font-family: "Gotham Rounded";
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 13%;
+}
+
+.profileYear {
+    margin-top: 0 !important;
+}
+
+.profileKg {
+    margin-top: 0 !important;;
+}
+
+#select h2 {
+    width: 155px;
+    height: 28px;
+    color: #ffffff;
+    font-family: "Segoe UI";
+    font-size: 20px;
+    font-weight: 400;
+    position: absolute;
+    top: 25%;
+}
+
+#select .title {
+    top: 9%;
+    padding: 0;
+    height: 50px;
+    margin-bottom: 0;
+    line-height: 50px;
+    position: relative;
+}
+
+.box {
+    background-color: #ffffff;
+    height: 680px;
+    padding-top: 21%;
+}
+
+#select .ui-content {
+    padding: 0;
+}
+
+.box .title {
+    width: 100%;
+    height: 28px;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 7%;
+}
+
+.box button {
+    width: 158px;
+    height: 75px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    background-color: #19769f !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+    text-shadow: 0 0px 0 #f3f3f300 !important;
+    display: inline;
+    font-size: 1.4em;
+    position: relative;
+    top: 77px;
+    left: 1%;
+}
+
+#btn-h-yes {
+}
+
+#btn-h-no {
+    /*background-color: #FF0000 !important;*/
+}
+
+#select {
+    background-image: linear-gradient(101deg, #19769f 0%, #35d8a6 100%);
+}
+
+#select .createAcc {
+    position: relative;
+    top: 18%;
+    font-size: 1.1em;
+}
+
+.imgcontainer .title {
+    font-size: 41px;
+    width: 88%;
+    text-align: center;
+}
+
+.custom-header {
+    width: 100%;
+    height: 56px;
+    box-shadow: 0 3px 11px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(101deg, #19769f 0%, #35d8a6 100%);
+    margin-top: -4%;
+}
+
+.custom-header button {
+    width: 20%;
+}
+
+.custom-header .title {
+    margin: -14% 18% 2% auto;
+    height: 28px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    text-align: center;
+}
+
+#appointement .profileImg {
+    width: 25%;
+    border: 1px solid #eeeeee;
+    margin-left: -11px;
+    border-radius: 50%;
+}
+
+.doctorName {
+    width: 130px;
+    height: 24px;
+    color: #19769f;
+    font-size: 18px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    margin: 3% 4% 3% -8%;
+    position: absolute;
+}
+
+#btn-appAppoint {
+    position: absolute;
+    top: 82%;
+    width: 87%;
+    margin-left: auto;
+    margin-right: auto;
+    right: 7%;
+    background-color: #19769f !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+    text-shadow: 0 0px 0 #f3f3f300 !important;
+}
+
+.doctorDetail {
+    position: absolute;
+    width: 100%;
+}
+
+.doctorQua {
+    width: 69px;
+    height: 17px;
+    color: #51565f;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    margin: 10% 4% 3% -8%;
+    position: absolute;
+}
+
+.doctorAddres {
+    width: 100%;
+    height: 17px;
+    color: #51565f;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    margin: 15% 4% 3% -8%;
+    position: absolute;
+}
+
+.custom-container {
+    position: absolute;
+    width: 91%;
+    margin-top: 41%;
+    height: 332px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.11);
+    border-radius: 4px;
+    border: 1px solid #5fe5bc;
+    background-color: #ffffff;
+}
+
+.custom-container span {
+    position: relative;
+    display: block;
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid #d5d5d5;
+    padding-top: 10px;
+}
+
+.date {
+    width: 119px;
+    height: 17px;
+    color: #616161;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.time {
+    height: 122px !important;
+}
+
+.time h5 {
+    margin-top: 61px;
+    width: 50px;
+    height: 19px;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 19px;
+    font-weight: 500;
+}
+
+#meal .ui-content {
+
+    padding: 0;
+}
+
+.couverImg, .couverImg img {
+
+    width: 100%;
+}
+
+.mealBtn {
+
+    width: 100%;
+    box-shadow: 0 1px 6px rgba(61, 61, 61, 0.18);
+    border-radius: 4px;
+    border: 1px solid #5fe5bc;
+    background-color: #ffffff;
+    text-align: center;
+    padding-top: 7%;
+
+}
+
+.mealBtn img {
+
+    width: 26%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mealGrid {
+    display: grid;
+    grid-template-areas: 'title title' 'veg veg' 'non-veg non-veg';
+    grid-gap: 10px;
+
+}
+
+#btnNonVeg {
+
+    grid-area: non-veg;
+
+}
+
+#btnVeg {
+
+    grid-area: veg;
+}
+
+.mealGrid span {
+
+    color: #3d3d3d;
+    font-family: "Gotham Rounded";
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.mealGrid h3 {
+
+    grid-area: title;
+    width: 100%;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.cusotm-h3 {
+
+    width: 100%;
+    color: #19769f;
+    font-family: "Gotham Rounded";
+    font-size: 33px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.info p {
+
+    color: #676767;
+    font-size: 1.125rem;
+    letter-spacing: .5px;
+}
+
+.info li {
+    color: #676767;
+    font-size: 1.125rem;
+    letter-spacing: .5px;
+    line-height: 1.65;
+}
+
+.info h3{
+
+    text-align: center;
+    text-transform: capitalize;
+
+}
+
+.info h4{
+
+    font-weight: 700;
+}
+
+
+

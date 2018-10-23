@@ -180,31 +180,14 @@ $("#loginButton").click(function (e) {
 
 
 
-$("#signup").on('submit', function (e) {
+$("#signupForm").on('submit', function (e) {
 
 
-    var email = $('#signup').find('input[name="email"]').val();
-    var password = $('#signup').find('input[name="psw"]').val();
-    var rePassword = $('#signup').find('input[name="psw-repeat"]').val();
+    var email = $('#signupForm').find('input[name="email"]').val();
+    var password = $('#signupForm').find('input[name="password"]').val();
+    var rePassword = $('#signupForm').find('input[name="psw-repeat"]').val();
 
     if (password == rePassword) {
-
-        var userTable = firebase.database().ref('users/');
-        var userId;
-
-        userTable.limitToLast(1).once('child_added', function (childSnapshot) {
-            var snap = childSnapshot.val();
-            console.log(JSON.stringify(snap.id, null, 4));
-            var id = JSON.stringify(snap.id, null, 4);
-            userId = id;
-            if (isNaN(parseInt(userId))) {
-                userId = 0;
-            };
-            userId = parseInt(userId) + 1;
-            writeUserData(userId, username, email, password);
-            loadUser(username, password);
-
-        });
 
 
         if (email.length < 4) {
@@ -218,9 +201,19 @@ $("#signup").on('submit', function (e) {
 
         // [START createwithemail]
         firebase.auth().createUserWithEmailAndPassword(email, password).then( function () {
-           
+
+            var formData =  $('#signupForm').serializeArray();
+
+            $.ajax({
+                type: "POST",
+                url: "http://3.0.56.127/site/signup/mobile",
+                data:  formData,
+                success: function(data) {
+                    alert(data)
+                }
+            });
             window.localStorage.setItem('user', email);
-            location.replace("/");
+
         
         
         

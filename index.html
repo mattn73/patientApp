@@ -4,15 +4,12 @@
 
     <title>APP</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+
     <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css" />
-    <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.theme.min.css" />
-    <link rel="stylesheet" href=" assets/css/jquery.mobile.custom.structure.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mobile.custom.theme.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mobile.custom.structure.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-
-
-    <script defer src=" assets/js/solid.min.js"></script>
-    <script defer src=" assets/js/fontawesome.min.js"></script>
 
     <script src=" assets/js/Chart.bundle.min.js"></script>
 
@@ -270,10 +267,15 @@
 
                     <div class="container loginInput">
 
-                        <input type="text" placeholder="Enter Email" id="signEmail" name="email" required/>
+                        <input type="text" placeholder="Email" id="signEmail" name="email" required/>
 
 
-                        <input type="password" placeholder="Enter Password" id='signupPsw' name="psw" required/>
+                        <input type="text" placeholder="Firstname" id="signFName" name="firstname" required/>
+
+                        <input type="text" placeholder="Lastname" id="signLName" name="lastname" required/>
+
+
+                        <input type="password" placeholder="Password" id='signupPsw' name="password" required/>
 
                         <input type="password" placeholder="Repeat Password" id='signupPsw-repeat' name="psw-repeat" required/>
 
@@ -301,12 +303,87 @@
         <!-- /page -->
 
 
+        <div data-role="page" id="myProfile">
+
+            <div data-role="header">
+                <div class="custom-header">
+
+                    <div class='header-hamburger'>
+                        <a href="#login">
+                            <img src="assets/images/backArrow.png">
+                        </a>
+                    </div>
+
+                    <div class='header-title'>
+                        <h3 class="title">Personnal Details</h3>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- /header -->
+
+            <div role="main" class="ui-content">
+                <form id="addDataForm">
+
+                    <div class="container input">
+
+                        <!--<select data-role="none"  name="title">-->
+                        <!--<option value="0">Title</option>-->
+                        <!--<option value="mr">MR</option>-->
+                        <!--<option value="mrs">MRS</option>-->
+                        <!--<option value="miss">Miss</option>-->
+                        <!--</select>-->
+
+                        <div class="form-group">
+                            <select id="inputState" class="form-control" data-role="none" name="title">
+                                <option value="0">Select Title</option>
+                                <option value="mr">MR</option>
+                                <option value="mrs">MRS</option>
+                                <option value="miss">Miss</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <select id="inputState" class="form-control" data-role="none" name="gender">
+                                <option value="0">Select Gender</option>
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
+                            </select>
+                        </div>
+
+
+                        <input type="number" placeholder="Enter Phone" id="dataPhone" name="Phone" required/>
+
+
+                        <input type="password" placeholder="Enter Password" id='addDataAddress' name="address" required/>
+
+                        <input type="date" placeholder="Repeat Password" id='addbirthdate' name="birthdate" required/>
+
+                        <button type="submit" id="databtn">Sign Up</button>
+
+
+                    </div>
+                </form>
+
+            </div>
+            <!-- /content -->
+
+            <div data-role="footer">
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
+
+
         <div data-role="page" id="profile">
 
             <div data-role="header">
                 <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
                     <!-- <i class="fas fa-align-left"></i> -->
-                    <div class="hamburger">
+                    <div class="hamburger reverse-hamburger">
                         <span class="bar"></span>
                         <span class="bar"></span>
                         <span class="bar"></span>
@@ -347,18 +424,22 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- /content -->
+            </div>
+            <!-- /content -->
 
             <div data-role="footer">
-            </div> <!-- /footer -->
-        </div><!-- /page -->
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
 
         <div data-role="page" id="select">
 
             <div data-role="header">
 
 
-            </div> <!-- /header -->
+            </div>
+            <!-- /header -->
 
             <div role="main" class="ui-content">
 
@@ -386,83 +467,814 @@
                 </div>
 
 
-            </div><!-- /content -->
+            </div>
+            <!-- /content -->
 
             <div data-role="footer">
-            </div><!-- /footer -->
-        </div><!-- /page -->
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
 
-        <div data-role="page" id="vegMeal">
+        <div data-role="page" id="vegMeal" class="info">
 
             <div data-role="header">
-                <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                </button>
+                <div class="custom-header">
 
-            </div> <!-- /header -->
+                    <div class='header-hamburger'>
+                        <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                            <div class="hamburger reverse-hamburger">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class='header-title'>
+                        <h3 class="title">vegetarians</h3>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /header -->
 
             <div role="main" class="ui-content">
 
-                <h2 class="title">For vegetarians</h2>
+
+
+                <div class="container">
+
+                    <h3>Our Recommendation </h3>
+
+                </div>
+
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light">Eat at least one dark green vegetable and one orange vegetable each day.</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light">Have vegetables and fruit more often than juice.</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light">Make at least half of your grain products whole grain each day.</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light">Have meat alternatives such as beans, lentils and tofu often.</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light">Include a small amount of unsaturated fat each day.</a>
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-light">Satisfy your thirst with safe drinking water.</a>
+                </div>
+
+                <div class="container">
+
+                    <h3>Food program</h3>
+                    <p>As with any food program, it is important to do some planning to meet nutrient needs. Here's what you
+                        may want to consider:</p>
+
+
+                    <div class="accordion" id="vegAccordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn  btn-primary btn-lg btn-block btn-custom" type="button" data-role="none" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        Protein
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#vegAccordion">
+                                <div class="card-body">
+
+                                    <p>Plant-based foods can provide all the protein you need. Protein-rich plant foods include:</p>
+
+
+                                    <div class="list-group">
+                                        <a href="#" class="list-group-item list-group-item-action list-group-item-light">All soy products such as tofu, tempeh and beverages</a>
+                                        <a href="#" class="list-group-item list-group-item-action list-group-item-light">Cooked beans, peas and lentils</a>
+                                        <a href="#" class="list-group-item list-group-item-action list-group-item-light">Peanuts and peanut butter</a>
+                                        <a href="#" class="list-group-item list-group-item-action list-group-item-light">Most nuts and seeds</a>
+                                    </div>
+
+                                    <p>It is no longer necessary to combine proteins for example, beans with grains, in the
+                                        same meal in order to maximize protein absorption. Other protein options include
+                                        eggs (also rich in zinc and iron) and milk (high in zinc). Whole grains such as quinoa
+                                        also provide protein and are great sources of minerals.</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-primary btn-lg btn-block btn-custom collapsed" type="button" data-role="none" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Iron
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#vegAccordion">
+                                <div class="card-body">
+                                    <p>Vegetarians are at no more risk of iron deficiency than meat eaters. While the version
+                                        of iron found in meat (heme-iron) is more readily absorbed than the non-heme iron
+                                        found in plant sources, absorption can be enhanced by combining non-heme iron options
+                                        with foods high in vitamin C such as citrus fruits, tomatoes, broccoli or berries.
+                                        Good plant sources of iron include dark green leafy vegetables, dried beans or legumes,
+                                        iron-enriched products (check labels), nutritional yeast and dried fruit. An example
+                                        may be a romaine lettuce salad with mandarin oranges.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn  btn-primary btn-lg btn-block btn-custom collapsed" data-role="none" type="button" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Calcium and vitamin D
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#vegAccordion">
+                                <div class="card-body">
+                                    <p>Calcium is important for strong bones and vitamin D is necessary for your body to be
+                                        able to absorb calcium. Dairy products, almonds, sesame seeds, dark-green vegetables
+                                        (such as broccoli, bok choy and kale), and black strap molasses contain calcium.
+                                        Other products are fortified with calcium, including soy and rice beverages, tofu
+                                        and orange juice </p>
+
+                                    <p>Vitamin D is often added to milk and some yogurt (but not cheese), soy and rice beverages,
+                                        and fortified margarine. While sunlight allows us to produce our own vitamin D through
+                                        our skin, it is typically not sufficient during Canadian winters. As a result, these
+                                        supplemented sources are important, especially for babies, children and older adults.
+                                        We recommend for men and women over 50 years of age to take a daily supplement of
+                                        Vitamin D of 400 IU.</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn  btn-primary btn-lg btn-block btn-custom  collapsed" data-role="none" type="button" data-toggle="collapse"
+                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Vitamin B 12
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#vegAccordion">
+                                <div class="card-body">
+                                    <p>This vitamin is necessary for cell division and blood formation. It can be found in fortified
+                                        cereals, soy and rice beverages, and some types of nutritional yeast. It's important
+                                        to read labels to ensure you are getting enough B 12. If you are vegetarian or vegan,
+                                        consult your health professional about a B 12 supplement if you are not sure you're
+                                        getting enough from your diet
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+            <!-- /content -->
+
+            <div data-role="footer">
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
+
+
+
+        <!-- /page -->
+
+        <div data-role="page" id="nonVegMeal" class="info">
+
+            <div data-role="header">
+                <div class="custom-header">
+
+                    <div class='header-hamburger'>
+                        <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                            <div class="hamburger reverse-hamburger">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class='header-title'>
+                        <h3 class="title">Non-vegetarians</h3>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /header -->
+
+            <div role="main" class="ui-content">
+
+
+
+                <div class="container">
+
+                    <h3>Our Recommendation </h3>
+
+                </div>
+
+                <p>Eating a healthy, balanced diet is one of the most important things you can do to protect your health. In
+                    fact, up to 80% of premature heart disease and stroke can be prevented through your life choices and
+                    habits, such as eating a healthy diet and being physically active.</p>
+
+
+                <h4>A healthy diet can help lower your risk of heart disease and stroke by:</h4>
+
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light">improving your cholesterol levels</li>
+                    <li class="list-group-item list-group-item-light">reducing your blood pressure</li>
+                    <li class="list-group-item list-group-item-light">helping you manage your body weight</li>
+                    <li class="list-group-item list-group-item-light">controlling your blood sugar.</li>
+
+                </ul>
+
+                <div class="container">
+
+                    <h3>What does a healthy, balanced diet look like?</h3>
+                    <p>A healthy diet is made up mostly of whole or natural foods. We use the words whole and natural to refer
+                        to foods that have not been highly processed or ultra-processed.</p>
+
+                    <p>A healthy diet includes :</p>
+
+                    <div class="accordion" id="nonVegAccordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn  btn-primary btn-lg btn-block btn-custom" type="button" data-role="none" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        Eating lots of vegetables and fruit.
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#vegAccordion">
+                                <div class="card-body">
+
+                                    <p>Plant-based foods can provide all the protein you need. Protein-rich plant foods include:</p>
+
+
+                                    <ul class="list-group">
+                                        <li class="list-group-item list-group-item-light">This is one of the most important diet habits. Vegetables and fruit are packed with
+                                            nutrients (antioxidants, vitamins, minerals and fibre) and help you maintain
+                                            a healthy weight by keeping you full longer.</li>
+                                        <li class="list-group-item list-group-item-light">Aim for 7-10 servings of vegetables and fruit every day .</li>
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-primary btn-lg btn-block btn-custom collapsed" type="button" data-role="none" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Choosing whole grain foods more often.
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#vegAccordion">
+                                <div class="card-body">
+
+
+                                    <ul class="list-group">
+                                        <li class="list-group-item list-group-item-light">Whole grain foods include whole grain bread and crackers, brown or wild rice, quinoa,
+                                            oatmeal and hulled barley. They are prepared using the entire grain. Whole grain
+                                            foods have fibre, protein and B vitamins to help you stay healthy and full longer.</li>
+                                        <li class="list-group-item list-group-item-light">Choose whole grain options instead of processed or refined grains like white bread
+                                            and pasta.</li>
+
+                                    </ul>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn  btn-primary btn-lg btn-block btn-custom collapsed" data-role="none" type="button" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Eating a variety of foods that provide protein.
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#vegAccordion">
+                                <div class="card-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item list-group-item-light">Foods with protein include fish, beans and lentils, tofu, dairy products and lean
+                                            meat. Protein helps build and maintain bones, muscles and skin.</li>
+                                        <li class="list-group-item list-group-item-light">Eat protein every day.</li>
+                                        <li class="list-group-item list-group-item-light">Try to eat at least two servings of fish each week, and find recipes with beans,
+                                            lentils and tofu for variety in your diet.</li>
+                                        <li class="list-group-item list-group-item-light">Dairy products are a great source of protein. Choose lower fat, unflavoured options.</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h5 class="mb-0">
+                                    <button class="btn  btn-primary btn-lg btn-block btn-custom  collapsed" data-role="none" type="button" data-toggle="collapse"
+                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Avoid highly and ultra-processed foods.
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#vegAccordion">
+                                <div class="card-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item list-group-item-light">
+                                            <b>Highly processed foods, often called ultra-processed </b>are foods that are changed
+                                            from their original food source and have many added ingredients. During processing,
+                                            often important nutrients such as vitamins, minerals and fiber are removed while
+                                            <span>salt</span> and
+                                            <span>sugar</span> are added. Examples of processed food include: fast foods, hot dogs,
+                                            chips, cookies, frozen pizzas, deli meats, white rice and white bread.
+                                        </li>
+                                        <li class="list-group-item list-group-item-light">
+                                            <b>Some minimally processed foods are okay.</b> These are foods that are slightly
+                                            changed in some way but contain few industrially made additives. Minimally processed
+                                            foods keep almost all of their essential nutrients. Some examples are: bagged
+                                            salad, frozen vegetables and fruit, eggs, milk, cheese, flour, brown rice,
+                                            <span>oil</span> and dried herbs. We are not referring to these minimally processed
+                                            foods when we are advising you not to eat processed foods.</li>
+                                        <li class="list-group-item list-group-item-light">Heart & Stroke funded research found that ultra-processed foods make up almost half
+                                            of Canadians' diets.</li>
+                                        <li class="list-group-item list-group-item-light">Dairy products are a great source of protein. Choose lower fat, unflavoured options.</li>
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="headingFive">
+                                <h5 class="mb-0">
+                                    <button class="btn  btn-primary btn-lg btn-block btn-custom  collapsed" data-role="none" type="button" data-toggle="collapse"
+                                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Avoid sugary drinks
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#vegAccordion">
+                                <div class="card-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item list-group-item-light">Sugary drinks including energy drinks, fruit drinks, 100% fruit juice, soft drinks
+                                            and flavored coffees have lots of sugar and little to no nutritional value. It
+                                            is easy to drink empty calories without realizing, and this leads to weight gain.
+                                        </li>
+                                        <li class="list-group-item list-group-item-light">Avoid fruit juice, even when it is 100% fruit juice. Although fruit juice has some
+                                            of the benefits of the fruit (vitamins, minerals), it has more sugar than the
+                                            fruit and less fiber. Fruit juice should not be consumed as alternative to fruits.
+                                            Canadians should eat their fruits, not drink them.</li>
+                                        <li class="list-group-item list-group-item-light">When safe drinking water is not available, quench your thirst with coffee, tea, unsweetened
+                                            low fat milk, and previously boiled water.</li>
+
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Top 5 tips from the experts</h3>
+
+                    <ul>
+
+                        <li>
+                            Prepare most of your meals at home using whole or minimally processed foods. Choose from a variety of different proteins
+                            to keep things interesting. Using catchy names for each day can help you plan.
+                        </li>
+                        <li>
+                            Make an eating plan each week – this is the key to fast, easy meal preparation
+                        </li>
+
+                        <li>
+                            Choose recipes with plenty of vegetables and fruit. Your goal is to fill half your plate with vegetables and fruit at every
+                            meal. Choose brightly coloured fruits and vegetables each day, especially orange and dark green
+                            vegetables. Frozen or canned unsweetened fruits and vegetables are a perfect alternative to fresh
+                            produce.
+                        </li>
+                        <li>Avoid sugary drinks and instead drink water. Low fat, unsweetened milk is also a good way to stay
+                            hydrated. Keep a reusable water bottle in your purse or car so you can fill up wherever you are
+                            going.</li>
+
+                        <li>at smaller meals more often. Eat at least three meals a day with snacks in between. When you wait
+                            too long to eat you are more likely to make unhealthy food choices. Keep easy-to-eat snacks in
+                            your purse or bag for emergencies.</li>
+
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+            <!-- /content -->
+
+            <div data-role="footer">
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
+
+        <div data-role="page" id="heartInfo" class="info">
+
+                <div data-role="header">
+                    <div class="custom-header">
+    
+                        <div class='header-hamburger'>
+                            <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                                <div class="hamburger reverse-hamburger">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                </div>
+                            </button>
+                        </div>
+    
+                        <div class='header-title'>
+                            <h3 class="title">Heart Disease Information</h3>
+                        </div>
+                    </div>
+    
+                </div>
+                <!-- /header -->
+    
+                <div role="main" class="ui-content">
+    
+    
+    
+                    <div class="container">
+    
+                        <h3>Our Recommendation </h3>
+    
+                    </div>
+    
+                    <p>Eating a healthy, balanced diet is one of the most important things you can do to protect your health. In
+                        fact, up to 80% of premature heart disease and stroke can be prevented through your life choices and
+                        habits, such as eating a healthy diet and being physically active.</p>
+    
+    
+                    <h4>A healthy diet can help lower your risk of heart disease and stroke by:</h4>
+    
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-light">improving your cholesterol levels</li>
+                        <li class="list-group-item list-group-item-light">reducing your blood pressure</li>
+                        <li class="list-group-item list-group-item-light">helping you manage your body weight</li>
+                        <li class="list-group-item list-group-item-light">controlling your blood sugar.</li>
+    
+                    </ul>
+    
+                    <div class="container">
+    
+                        <h3>What does a healthy, balanced diet look like?</h3>
+                        <p>A healthy diet is made up mostly of whole or natural foods. We use the words whole and natural to refer
+                            to foods that have not been highly processed or ultra-processed.</p>
+    
+                        <p>A healthy diet includes :</p>
+    
+                        <div class="accordion" id="nonVegAccordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn  btn-primary btn-lg btn-block btn-custom" type="button" data-role="none" data-toggle="collapse" data-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                            Eating lots of vegetables and fruit.
+                                        </button>
+                                    </h5>
+                                </div>
+    
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#vegAccordion">
+                                    <div class="card-body">
+    
+                                        <p>Plant-based foods can provide all the protein you need. Protein-rich plant foods include:</p>
+    
+    
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-light">This is one of the most important diet habits. Vegetables and fruit are packed with
+                                                nutrients (antioxidants, vitamins, minerals and fibre) and help you maintain
+                                                a healthy weight by keeping you full longer.</li>
+                                            <li class="list-group-item list-group-item-light">Aim for 7-10 servings of vegetables and fruit every day .</li>
+    
+                                        </ul>
+    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-primary btn-lg btn-block btn-custom collapsed" type="button" data-role="none" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Choosing whole grain foods more often.
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#vegAccordion">
+                                    <div class="card-body">
+    
+    
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-light">Whole grain foods include whole grain bread and crackers, brown or wild rice, quinoa,
+                                                oatmeal and hulled barley. They are prepared using the entire grain. Whole grain
+                                                foods have fibre, protein and B vitamins to help you stay healthy and full longer.</li>
+                                            <li class="list-group-item list-group-item-light">Choose whole grain options instead of processed or refined grains like white bread
+                                                and pasta.</li>
+    
+                                        </ul>
+    
+    
+    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn  btn-primary btn-lg btn-block btn-custom collapsed" data-role="none" type="button" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Eating a variety of foods that provide protein.
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#vegAccordion">
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-light">Foods with protein include fish, beans and lentils, tofu, dairy products and lean
+                                                meat. Protein helps build and maintain bones, muscles and skin.</li>
+                                            <li class="list-group-item list-group-item-light">Eat protein every day.</li>
+                                            <li class="list-group-item list-group-item-light">Try to eat at least two servings of fish each week, and find recipes with beans,
+                                                lentils and tofu for variety in your diet.</li>
+                                            <li class="list-group-item list-group-item-light">Dairy products are a great source of protein. Choose lower fat, unflavoured options.</li>
+    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="card">
+                                <div class="card-header" id="headingFour">
+                                    <h5 class="mb-0">
+                                        <button class="btn  btn-primary btn-lg btn-block btn-custom  collapsed" data-role="none" type="button" data-toggle="collapse"
+                                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            Avoid highly and ultra-processed foods.
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#vegAccordion">
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-light">
+                                                <b>Highly processed foods, often called ultra-processed </b>are foods that are changed
+                                                from their original food source and have many added ingredients. During processing,
+                                                often important nutrients such as vitamins, minerals and fiber are removed while
+                                                <span>salt</span> and
+                                                <span>sugar</span> are added. Examples of processed food include: fast foods, hot dogs,
+                                                chips, cookies, frozen pizzas, deli meats, white rice and white bread.
+                                            </li>
+                                            <li class="list-group-item list-group-item-light">
+                                                <b>Some minimally processed foods are okay.</b> These are foods that are slightly
+                                                changed in some way but contain few industrially made additives. Minimally processed
+                                                foods keep almost all of their essential nutrients. Some examples are: bagged
+                                                salad, frozen vegetables and fruit, eggs, milk, cheese, flour, brown rice,
+                                                <span>oil</span> and dried herbs. We are not referring to these minimally processed
+                                                foods when we are advising you not to eat processed foods.</li>
+                                            <li class="list-group-item list-group-item-light">Heart & Stroke funded research found that ultra-processed foods make up almost half
+                                                of Canadians' diets.</li>
+                                            <li class="list-group-item list-group-item-light">Dairy products are a great source of protein. Choose lower fat, unflavoured options.</li>
+    
+                                        </ul>
+    
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="card">
+                                <div class="card-header" id="headingFive">
+                                    <h5 class="mb-0">
+                                        <button class="btn  btn-primary btn-lg btn-block btn-custom  collapsed" data-role="none" type="button" data-toggle="collapse"
+                                            data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            Avoid sugary drinks
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#vegAccordion">
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item list-group-item-light">Sugary drinks including energy drinks, fruit drinks, 100% fruit juice, soft drinks
+                                                and flavored coffees have lots of sugar and little to no nutritional value. It
+                                                is easy to drink empty calories without realizing, and this leads to weight gain.
+                                            </li>
+                                            <li class="list-group-item list-group-item-light">Avoid fruit juice, even when it is 100% fruit juice. Although fruit juice has some
+                                                of the benefits of the fruit (vitamins, minerals), it has more sugar than the
+                                                fruit and less fiber. Fruit juice should not be consumed as alternative to fruits.
+                                                Canadians should eat their fruits, not drink them.</li>
+                                            <li class="list-group-item list-group-item-light">When safe drinking water is not available, quench your thirst with coffee, tea, unsweetened
+                                                low fat milk, and previously boiled water.</li>
+    
+    
+                                        </ul>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Top 5 tips from the experts</h3>
+    
+                        <ul>
+    
+                            <li>
+                                Prepare most of your meals at home using whole or minimally processed foods. Choose from a variety of different proteins
+                                to keep things interesting. Using catchy names for each day can help you plan.
+                            </li>
+                            <li>
+                                Make an eating plan each week – this is the key to fast, easy meal preparation
+                            </li>
+    
+                            <li>
+                                Choose recipes with plenty of vegetables and fruit. Your goal is to fill half your plate with vegetables and fruit at every
+                                meal. Choose brightly coloured fruits and vegetables each day, especially orange and dark green
+                                vegetables. Frozen or canned unsweetened fruits and vegetables are a perfect alternative to fresh
+                                produce.
+                            </li>
+                            <li>Avoid sugary drinks and instead drink water. Low fat, unsweetened milk is also a good way to stay
+                                hydrated. Keep a reusable water bottle in your purse or car so you can fill up wherever you are
+                                going.</li>
+    
+                            <li>at smaller meals more often. Eat at least three meals a day with snacks in between. When you wait
+                                too long to eat you are more likely to make unhealthy food choices. Keep easy-to-eat snacks in
+                                your purse or bag for emergencies.</li>
+    
+    
+                        </ul>
+    
+                    </div>
+    
+    
+                </div>
+                <!-- /content -->
+    
+                <div data-role="footer">
+                </div>
+                <!-- /footer -->
+            </div>
+            <!-- /page -->
+    
+
+
+        <div data-role="page" id="meal">
+
+            <div data-role="header">
+
+                <div class="custom-header">
+                    <div class='header-hamburger'>
+                        <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                            <div class="hamburger reverse-hamburger">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class='header-title'>
+                        <h3 class="title">Meal Plan</h3>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /header -->
+
+            <div role="main" class="ui-content">
+
+                <div class="couverImg">
+
+
+
+
+
+
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="assets/images/mealCover.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="assets/images/Chicken-Salad2.jpg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="assets/images/romanChiken.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="container mealGrid">
+                    <h3 class="title">SELECT YOUR PREFRENCES</h3>
+
+                    <div id="btnNonVeg" class="mealBtn">
+                        <a href="#vegMeal">
+                            <img src="assets/images/logo-nonveg.png">
+                            <span>Non vegetarian</span>
+                        </a>
+
+                    </div>
+
+
+                    <div id="btnVeg" class="mealBtn">
+                        <a href="#nonVegMeal">
+                            <img src="assets/images/logo-veg.png">
+                            <span>vegetarian</span>
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!-- /content -->
+
+            <div data-role="footer">
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
+
+
+        <div data-role="page" id="appointement">
+
+            <div data-role="header">
+
+                <div class="custom-header">
+
+
+                    <div class='header-hamburger'>
+                        <button type="button" id="sidebarCollapse" class="btn sidebarCollapse">
+                            <div class="hamburger reverse-hamburger">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class='header-title'>
+                        <h3 class="title">Appointment Details</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- /header -->
+
+            <div role="main" class="ui-content">
+
+                <div class="doctorDetail">
+
+
+                    <img class="logoImg profileImg" src="assets/images/img_avatar2.png">
+                    <span class="doctorName">Dr. John Smith</span>
+                    <span class="doctorQua">MSC,MBBS</span>
+                    <span class="doctorAddres">Dishant Hospital, Ring road, Nagpur</span>
+                </div>
 
                 <div class="container custom-container">
 
-                    <h3>Recommandation For Vegetarians</h3>
-
-                    <ul>
-                        <li>
-                            Eat at least one dark green vegetable and one orange vegetable each day.
-                        </li>
-                        <li>Have vegetables and fruit more often than juice.</li>
-                        <li>Make at least half of your grain products whole grain each day.</li>
-                        <li>Have meat alternatives such as beans, lentils and tofu often.</li>
-                        <li>Include a small amount of unsaturated fat each day.</li>
-                        <li>Satisfy your thirst with safe drinking water.</li>
-                    </ul>
-
-                    <h3>Food program</h3>
-                    <p>As with any food program, it is important to do some planning to meet nutrient needs. Here's what you may want to consider:</p>
-
-                    <h4>Protein</h4>
-
-                    <p>Plant-based foods can provide all the protein you need. Protein-rich plant foods include:</p>
-
-                    <ul>
-                        <li>All soy products such as tofu, tempeh and beverages</li>
-                        <li>Cooked beans, peas and lentils</li>
-                        <li>Peanuts and peanut butter</li>
-                        <li>Most nuts and seeds</li>
-                    </ul>
-
-                    <p>It is no longer necessary to combine proteins for example, beans with grains, in the same meal in order to maximize protein absorption. Other protein options include eggs (also rich in zinc and iron) and milk (high in zinc). Whole grains such as quinoa also provide protein and are great sources of minerals.</p>
-
-                    <h4>Iron</h4>
-
-                    <p>Vegetarians are at no more risk of iron deficiency than meat eaters. While the version of iron found in meat (heme-iron) is more readily absorbed than the non-heme iron found in plant sources, absorption can be enhanced by combining non-heme iron options with foods high in vitamin C such as citrus fruits, tomatoes, broccoli or berries. Good plant sources of iron include dark green leafy vegetables, dried beans or legumes, iron-enriched products (check labels), nutritional yeast and dried fruit. An example may be a romaine lettuce salad with mandarin oranges.</p>
-
-                    <h4>Calcium and vitamin D</h4>
-
-                    <p>Calcium is important for strong bones and vitamin D is necessary for your body to be able to absorb calcium. Dairy products, almonds, sesame seeds, dark-green vegetables (such as broccoli, bok choy and kale), and black strap molasses contain calcium. Other products are fortified with calcium, including soy and rice beverages, tofu and orange juice </p>
-
-                    <p>Vitamin D is often added to milk and some yogurt (but not cheese), soy and rice beverages, and fortified margarine. While sunlight allows us to produce our own vitamin D through our skin, it is typically not sufficient during Canadian winters. As a result, these supplemented sources are important, especially for babies, children and older adults. We recommend for men and women over 50 years of age to take a daily supplement of Vitamin D of 400 IU.</p>
-
-
-                    <h4>Vitamin B 12</h4>
-
-                    <p>This vitamin is necessary for cell division and blood formation. It can be found in fortified cereals, soy and rice beverages, and some types of nutritional yeast. It's important to read labels to ensure you are getting enough B 12. If you are vegetarian or vegan, consult your health professional about a B 12 supplement if you are not sure you're getting enough from your diet</p>
+                    <span class="date">02 - November - 2017</span>
+                    <span class="Time">11AM to 1PM
+                        <h5> Address</h5>
+                    </span>
+                    <span class="appointAddress">Dishant Hospital, Ring road, Nagpur</span>
 
                 </div>
-               
 
-            </div><!-- /content -->
+                <button type="button" id="btn-appAppoint" onclick="appAppoint()" class="heartPositivebtn">Approuve Appointment
+                </button>
+            </div>
+            <!-- /content -->
 
             <div data-role="footer">
-            </div><!-- /footer -->
-        </div> <!-- /page -->
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /page -->
 
 
     </div>
